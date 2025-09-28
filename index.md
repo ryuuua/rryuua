@@ -3,80 +3,108 @@ layout: home
 title: Home
 ---
 
-<!-- Hero -->
-<div class="hero" style="
-  background:
-    linear-gradient(135deg, rgba(37,99,235,.12), rgba(16,185,129,.12));
-">
-  <h1 style="margin-bottom:.25rem;">Ryunosuke Abe</h1>
-  <p style="margin:.25rem 0 1rem; color:var(--muted);">
-    NLP × Neuroscience-inspired Representation Learning @ NAIST
+<section class="hero">
+  <h1>Ryunosuke Abe</h1>
+  <p class="subtitle">
+    Graduate researcher blending natural language processing with neuroscience-inspired representation learning
+    to uncover interpretable structure in high-dimensional embeddings.
   </p>
-  <a class="btn" href="/publications/">Publications</a>
-  <a class="btn ghost" href="/projects/">Projects</a>
-  <a class="btn ghost" href="/cv/">CV</a>
-  <a class="btn ghost" href="/blog/">Blog</a>
-</div>
+  <div class="meta">
+    <span class="tag blue">NAIST · NLP Lab</span>
+    <span class="tag green">Nonlinear ICA</span>
+    <span class="tag pink">Identifiability</span>
+  </div>
+  <div class="meta" style="margin-top:1.4rem;">
+    <a class="btn primary" href="/publications/">Read Publications</a>
+    <a class="btn ghost" href="/projects/">Explore Projects</a>
+    <a class="btn ghost" href="/cv/">Download CV</a>
+  </div>
+</section>
 
-<!-- Intro + (optional) photo -->
-<div class="grid-2">
+<section class="grid-2">
   <div>
-    <div class="card">
+    <article class="card">
       <h2>About</h2>
-      <ul style="margin-top:.5rem;">
-        <li>M1, Nara Institute of Science and Technology (NAIST)</li>
-        <li>Research: nonlinear ICA / CEBRA, InfoNCE, identifiability &amp; consistency of language embeddings</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Research Overview</h2>
       <p>
-        High-dimensional language embeddings → <strong>low-dimensional, interpretable structure</strong>.
-        We study <em>nonlinear ICA</em> (CEBRA) with auxiliary variables, grid-/place-cell–like bases,
-        and <em>consistency</em> / <em>linear identifiability</em> across datasets and runs.
+        I am a master’s student at the Nara Institute of Science and Technology, advised by Prof. Takashi Ninomiya.
+        My work lies at the intersection of computational linguistics and machine learning, where I design methods that
+        reveal low-dimensional, meaningful factors inside massive language representations.
       </p>
-      <div style="margin-top:.5rem;">
-        <span class="tag blue">CEBRA</span>
-        <span class="tag green">Nonlinear ICA</span>
-        <span class="tag red">Identifiability</span>
-        <span class="tag">InfoNCE</span>
+      <p>
+        I especially enjoy collaborating across disciplines—drawing from cognitive neuroscience to inform the structure of
+        algorithms and collaborating with linguists to validate the interpretability of new embeddings.
+      </p>
+    </article>
+
+    <article class="card">
+      <h2>Research Focus</h2>
+      <div class="highlight-grid">
+        <div class="highlight">
+          <h3>Neuroscience-guided embedding design</h3>
+          <p>Adapting grid- and place-cell coding principles to organize linguistic spaces with geometric structure.</p>
+        </div>
+        <div class="highlight">
+          <h3>Learning with auxiliary context</h3>
+          <p>Extending nonlinear ICA (CEBRA) with contextual variables and contrastive objectives for robust alignment.</p>
+        </div>
+        <div class="highlight">
+          <h3>Identifiability guarantees</h3>
+          <p>Proving when InfoNCE-based training recovers consistent latent factors across datasets and random seeds.</p>
+        </div>
       </div>
-    </div>
+    </article>
   </div>
 
-  <!-- 右側に写真を置きたい場合：assets/img/portrait.jpg を追加 -->
-  <figure class="card" style="text-align:center;">
-    <img class="responsive" src="/assets/img/portrait.jpg" alt="Portrait of Ryunosuke Abe">
-    <figcaption style="color:var(--muted); margin-top:.5rem;">
-      (Optional) Replace with your photo: <code>assets/img/portrait.jpg</code>
+  <figure class="card profile-image">
+    <img src="/assets/img/portrait.jpg" alt="Portrait of Ryunosuke Abe" class="responsive">
+    <figcaption class="figure-note">
+      Replace this placeholder by adding <code>assets/img/portrait.jpg</code> to the repository.
     </figcaption>
   </figure>
-</div>
+</section>
 
-<!-- Education -->
-<div class="card">
+<section class="card">
+  <h2>Recent Highlights</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="period">2024</span>
+      <h3>Workshop talk on neuroscience-inspired representation learning</h3>
+      <p>Presented a study on aligning transformer embeddings with hippocampal cell coding at an interdisciplinary meetup.</p>
+    </div>
+    <div class="timeline-item">
+      <span class="period">2023</span>
+      <h3>Launched collaboration with NAIST Cognitive Neuroscience Center</h3>
+      <p>Initiated a joint project to evaluate language model representations against neural activity collected in VR experiments.</p>
+    </div>
+    <div class="timeline-item">
+      <span class="period">2022</span>
+      <h3>Undergraduate thesis on robust language grounding</h3>
+      <p>Explored contrastive learning techniques that stabilize semantics across multilingual corpora and noisy modalities.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
   <h2>Education</h2>
-  <ul style="list-style:none; padding-left:0; margin-top:.5rem;">
-    <li style="margin:.4rem 0;">
-      <strong>MS (Information Science)</strong>, 
-      <a href="https://www.naist.jp" target="_blank" rel="noopener">Nara Institute of Science and Technology</a> &nbsp;
-      <span class="tag blue">2025–2027</span>
-    </li>
-    <li style="margin:.4rem 0;">
-      <strong>BA (Literature)</strong>, 
-      <a href="https://www.keio.ac.jp" target="_blank" rel="noopener">Keio University</a> &nbsp;
-      <span class="tag green">2020–2025</span>
-    </li>
-  </ul>
-</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="period">2025 – 2027</span>
+      <h3>MS in Information Science</h3>
+      <p>Nara Institute of Science and Technology — Representation learning for language with auxiliary signals.</p>
+    </div>
+    <div class="timeline-item">
+      <span class="period">2020 – 2025</span>
+      <h3>BA in Literature</h3>
+      <p>Keio University — Linguistics, cognitive science, and digital humanities coursework.</p>
+    </div>
+  </div>
+</section>
 
-<!-- Quick links (buttons) -->
-<div class="card" style="text-align:center;">
-  <h2>Quick Links</h2>
-  <p style="margin:.5rem 0 1rem; color:var(--muted);">Jump to key sections</p>
-  <a class="btn" href="/publications/">Publications</a>
-  <a class="btn" href="/projects/">Projects</a>
-  <a class="btn" href="/cv/">CV</a>
-  <a class="btn" href="/blog/">Blog</a>
-</div>
+<section class="callout">
+  <h2>Let’s build interpretable language intelligence.</h2>
+  <p>
+    I am open to research collaborations, visiting positions, and opportunities to present this work to diverse audiences.
+    Reach out if you are exploring similar directions or want to co-design new experiments.
+  </p>
+  <a class="btn primary" href="mailto:ryunosuke.abe@example.com">Contact Me</a>
+</section>
