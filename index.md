@@ -15,9 +15,11 @@ title: Home
     <span class="tag pink">Identifiability</span>
   </div>
   <div class="meta" style="margin-top:1.4rem;">
+
     <a class="btn primary" href="{{ '/publications/' | relative_url }}">Read Publications</a>
     <a class="btn ghost" href="{{ '/projects/' | relative_url }}">Explore Projects</a>
     <a class="btn ghost" href="{{ '/cv/' | relative_url }}">Download CV</a>
+
   </div>
 </section>
 
@@ -56,7 +58,9 @@ title: Home
   </div>
 
   <figure class="card profile-image">
+
     <img src="{{ '/assets/img/portrait.jpg' | relative_url }}" alt="Portrait of Ryunosuke Abe" class="responsive">
+
     <figcaption class="figure-note">
       Replace this placeholder by adding <code>assets/img/portrait.jpg</code> to the repository.
     </figcaption>
