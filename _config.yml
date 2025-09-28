@@ -1,7 +1,7 @@
 title: Ryunosuke Abe
 description: "NLP × Neuroscience-inspired Representation Learning @ NAIST"
-url: ""  # e.g., https://ryuuua.github.io
-baseurl: ""  # e.g., /my-site if using a project site
+url: "https://ryuuua.github.io"
+baseurl: "/rryuua"
 theme: minima
 lang: ja-JP
 author:
