@@ -7,7 +7,7 @@
   --bg: #060606;
   --bg-alt: #0d0d0f;
   --fg: #f5f7ff;
-  --muted: #9ca3b6;
+  --muted: #adb6ce;
   --accent: #7c5cff;
   --accent-soft: rgba(124, 92, 255, 0.16);
   --accent-2: #06d6a0;
@@ -70,6 +70,10 @@ a:focus {
   background: linear-gradient(140deg, rgba(124, 92, 255, 0.18), rgba(6, 214, 160, 0.12))
               , var(--bg-alt);
   box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 2.2rem;
+  align-items: center;
 }
 
 .hero::before {
@@ -77,7 +81,7 @@ a:focus {
   position: absolute;
   inset: -30% -10% auto;
   height: 280px;
-  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 55%);
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.033), transparent 77%);
   filter: blur(0.5px);
   opacity: 0.8;
   z-index: 0;
@@ -153,12 +157,45 @@ a:focus {
   margin-left: 0.75rem;
 }
 
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-image {
+  justify-self: end;
+}
+
+.hero-image figure {
+  margin: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.hero-image img {
+  display: block;
+  width: clamp(180px, 28vw, 260px);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
 .grid-2 {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
   gap: 1.75rem;
   align-items: start;
   margin: 2.75rem 0;
+}
+
+.info-grid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.grid-2 > :first-child:last-child {
+  grid-column: 1 / -1;
 }
 
 .card {
@@ -232,24 +269,6 @@ a:focus {
 .highlight:hover {
   transform: translateY(-6px);
   border-color: rgba(124, 92, 255, 0.35);
-}
-
-.profile-image {
-  text-align: center;
-  padding: 1.4rem;
-}
-
-.profile-image img {
-  width: 100%;
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: var(--shadow);
-}
-
-.profile-image .figure-note {
-  margin-top: 0.9rem;
-  font-size: 0.86rem;
-  color: rgba(245, 247, 255, 0.65);
 }
 
 .timeline {
@@ -354,7 +373,18 @@ footer {
   }
 
   .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
     padding: 2.8rem 2.2rem;
+  }
+
+  .hero-content,
+  .hero-image {
+    justify-self: center;
+  }
+
+  .hero-image img {
+    width: clamp(160px, 40vw, 220px);
   }
 }
 
@@ -373,5 +403,11 @@ footer {
 
   .callout {
     padding: 2rem 1.6rem;
+  }
+}
+
+@media (min-width: 901px) {
+  .info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
