@@ -1,0 +1,35 @@
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
+      {{ site.title | escape }}
+    </a>
+
+    <input type="checkbox" id="site-nav-toggle" class="nav-toggle">
+    <label for="site-nav-toggle" class="nav-toggle-label">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="hamburger" aria-hidden="true"></span>
+    </label>
+
+    <nav class="site-nav" id="site-nav-menu" aria-label="Main navigation">
+      <div class="nav-groups">
+        <ul class="nav-group nav-group--global">
+          <li><a class="nav-link" href="{{ '/projects/' | relative_url }}">Projects</a></li>
+          <li><a class="nav-link" href="{{ '/publications/' | relative_url }}">Publications</a></li>
+          <li><a class="nav-link" href="{{ '/blog/' | relative_url }}">Blog</a></li>
+          <li><a class="nav-link" href="{{ '/cv/' | relative_url }}">CV</a></li>
+        </ul>
+        <span class="nav-divider" aria-hidden="true"></span>
+        <div class="nav-stack">
+          <span class="nav-label">On this page</span>
+          <ul class="nav-group nav-group--local">
+            <li><a class="nav-link" data-local="true" href="{{ '/' | relative_url }}#about">About</a></li>
+            <li><a class="nav-link" data-local="true" href="{{ '/' | relative_url }}#research">Research</a></li>
+            <li><a class="nav-link" data-local="true" href="{{ '/' | relative_url }}#highlights">Highlights</a></li>
+            <li><a class="nav-link" data-local="true" href="{{ '/' | relative_url }}#education">Education</a></li>
+            <li><a class="nav-link" data-local="true" href="{{ '/' | relative_url }}#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

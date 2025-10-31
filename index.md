@@ -3,7 +3,7 @@ layout: home
 title: Home
 ---
 
-<section class="hero">
+<section class="hero" id="top">
   <div class="hero-content">
     <h1>Ryunosuke Abe</h1>
     <p class="subtitle">
@@ -27,7 +27,7 @@ title: Home
   </div>
 </section>
 
-<section class="grid-2">
+<section class="grid-2" id="about">
   <div class="info-grid">
     <article class="card">
       <h2>About</h2>
@@ -40,7 +40,7 @@ title: Home
       </p>
     </article>
 
-    <article class="card">
+    <article class="card" id="research">
       <h2>Research Focus</h2>
       <div class="highlight-grid">
         <div class="highlight">
@@ -56,7 +56,7 @@ title: Home
   </div>
 </section>
 
-<section class="card">
+<section class="card" id="highlights">
   <h2>Recent Highlights</h2>
   <div class="timeline">
     <div class="timeline-item">
@@ -67,7 +67,7 @@ title: Home
   </div>
 </section>
 
-<section class="card">
+<section class="card" id="education">
   <h2>Education</h2>
   <div class="timeline">
     <div class="timeline-item">
@@ -83,7 +83,7 @@ title: Home
   </div>
 </section>
 
-<section class="callout">
+<section class="callout" id="contact">
   <h2>Let's build interpretable language intelligence.</h2>
   <p>
     I am open to research collaborations, visiting positions, and opportunities to present this work to diverse audiences.
