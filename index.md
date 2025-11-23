@@ -10,12 +10,12 @@ title: Home
       Master's student at NAIST. Mathematical Information Lab.
     </p>
     <div class="meta">
-      <span class="tag blue">NAIST · NLP Lab</span>
-      <span class="tag green">Nonlinear ICA</span>
-      <span class="tag pink">Identifiability</span>
+      <span class="tag blue">NLP </span>
+      <span class="tag green">Neuroscience</span>
+      <span class="tag pink">Representaiton Learning</span>
     </div>
     <div class="meta" style="margin-top:1.4rem;">
-      <a class="btn primary" href="{{ '/publications/' | relative_url }}">Read Publications</a>
+      <a class="btn ghost" href="{{ '/publications/' | relative_url }}">Read Publications</a>
       <a class="btn ghost" href="{{ '/projects/' | relative_url }}">Explore Projects</a>
       <a class="btn ghost" href="{{ '/cv/' | relative_url }}">Download CV</a>
     </div>
@@ -84,10 +84,10 @@ title: Home
 </section>
 
 <section class="callout" id="contact">
-  <h2>Let's build interpretable language intelligence.</h2>
+  <h2>Robust Representaiton learning</h2>
   <p>
     I am open to research collaborations, visiting positions, and opportunities to present this work to diverse audiences.
     Reach out if you are exploring similar directions or want to co-design new experiments.
   </p>
-  <a class="btn primary" href="mailto:ryunosuke.abe@example.com">Contact Me</a>
+  <a class="btn primary" href="abe.ryunosuke.at2@naist.ac.jp">Contact Me</a>
 </section>
