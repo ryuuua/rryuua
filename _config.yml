@@ -5,7 +5,6 @@ baseurl: "/rryuua"
 theme: minima
 lang: ja-JP
 author:
-name: Ryunosuke Abe
 email: abe.ryunosuke.at2@naist.ac.jp
 minima:
   skin: auto
