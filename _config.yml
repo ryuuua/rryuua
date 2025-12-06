@@ -1,12 +1,12 @@
 title: Ryunosuke Abe
-description: "NLP × Neuroscience-inspired Representation Learning @ NAIST"
+description: "Neuroscience-inspired Representation Learning @ NAIST"
 url: "https://ryuuua.github.io"
 baseurl: "/rryuua"
 theme: minima
 lang: ja-JP
 author:
-  name: Ryunosuke Abe
-  email: your.name@example.com
+name: Ryunosuke Abe
+email: abe.ryunosuke.at2@naist.ac.jp
 minima:
   skin: auto
 show_excerpts: true
