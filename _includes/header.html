@@ -4,6 +4,11 @@
       {{ site.title | escape }}
     </a>
 
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+      <span class="theme-toggle__icon" aria-hidden="true"></span>
+      <span class="theme-toggle__text" data-theme-label>Light mode</span>
+    </button>
+
     <input type="checkbox" id="site-nav-toggle" class="nav-toggle">
     <label for="site-nav-toggle" class="nav-toggle-label">
       <span class="sr-only">Toggle navigation</span>
@@ -33,3 +38,47 @@
     </nav>
   </div>
 </header>
+
+<script>
+  (function() {
+    const storageKey = 'theme-preference';
+    const root = document.documentElement;
+    const toggle = document.querySelector('[data-theme-toggle]');
+    const label = toggle ? toggle.querySelector('[data-theme-label]') : null;
+
+    const applyTheme = (theme) => {
+      root.setAttribute('data-theme', theme);
+      if (toggle) {
+        toggle.setAttribute('aria-pressed', theme === 'dark');
+        if (label) {
+          label.textContent = theme === 'dark' ? 'Dark mode' : 'Light mode';
+        }
+      }
+    };
+
+    let stored = null;
+    try {
+      stored = localStorage.getItem(storageKey);
+    } catch (error) {
+      stored = null;
+    }
+
+    if (stored === 'light' || stored === 'dark') {
+      applyTheme(stored);
+    } else {
+      applyTheme('light');
+    }
+
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        const next = current === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        try {
+          localStorage.setItem(storageKey, next);
+        } catch (error) {
+        }
+      });
+    }
+  })();
+</script>
