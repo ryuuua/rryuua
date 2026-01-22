@@ -575,7 +575,7 @@ a:focus {
   content: '';
   position: absolute;
   top: 0.5rem;
-  left: calc(-0.325rem + 1px);
+  left: calc(-0.325rem - 1px);
   width: 0.65rem;
   height: 0.65rem;
   border-radius: 999px;
