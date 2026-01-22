@@ -45,8 +45,6 @@
     const root = document.documentElement;
     const toggle = document.querySelector('[data-theme-toggle]');
     const label = toggle ? toggle.querySelector('[data-theme-label]') : null;
-    const favicons = document.querySelectorAll('[data-favicon]');
-
     const applyTheme = (theme) => {
       root.setAttribute('data-theme', theme);
       if (toggle) {
@@ -55,15 +53,20 @@
           label.textContent = theme === 'dark' ? 'Dark mode' : 'Light mode';
         }
       }
-      if (favicons.length) {
-        favicons.forEach((icon) => {
-          const lightIcon = icon.getAttribute('data-light-icon');
-          const darkIcon = icon.getAttribute('data-dark-icon');
-          if (lightIcon && darkIcon) {
-            icon.setAttribute('href', theme === 'dark' ? darkIcon : lightIcon);
-          }
-        });
-      }
+      document.querySelectorAll('[data-favicon]').forEach((icon) => {
+        const lightIcon = icon.getAttribute('data-light-icon');
+        const darkIcon = icon.getAttribute('data-dark-icon');
+        if (lightIcon && darkIcon) {
+          icon.setAttribute('href', theme === 'dark' ? darkIcon : lightIcon);
+        }
+      });
+      document.querySelectorAll('[data-theme-image]').forEach((image) => {
+        const lightSrc = image.getAttribute('data-light-src');
+        const darkSrc = image.getAttribute('data-dark-src');
+        if (lightSrc && darkSrc) {
+          image.setAttribute('src', theme === 'dark' ? darkSrc : lightSrc);
+        }
+      });
     };
 
     let stored = null;
@@ -73,10 +76,10 @@
       stored = null;
     }
 
-    if (stored === 'light' || stored === 'dark') {
-      applyTheme(stored);
-    } else {
-      applyTheme('light');
+    const initialTheme = stored === 'light' || stored === 'dark' ? stored : 'light';
+    applyTheme(initialTheme);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => applyTheme(initialTheme), { once: true });
     }
 
     if (toggle) {

@@ -22,7 +22,7 @@ title: Home
   </div>
   <div class="hero-image">
     <figure>
-      <img src="{{ '/material/2024-04-11(1).jpg' | relative_url }}" alt="Portrait of Ryunosuke Abe">
+      <img src="{{ '/material/light.jpg' | relative_url }}" alt="Portrait of Ryunosuke Abe" data-theme-image data-light-src="{{ '/material/light.jpg' | relative_url }}" data-dark-src="{{ '/material/dark.jpg' | relative_url }}">
     </figure>
   </div>
 </section>
