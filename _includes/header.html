@@ -45,6 +45,9 @@
     const root = document.documentElement;
     const toggle = document.querySelector('[data-theme-toggle]');
     const label = toggle ? toggle.querySelector('[data-theme-label]') : null;
+    const favicon = document.querySelector('[data-favicon]');
+    const lightIcon = favicon ? favicon.getAttribute('data-light-icon') : null;
+    const darkIcon = favicon ? favicon.getAttribute('data-dark-icon') : null;
 
     const applyTheme = (theme) => {
       root.setAttribute('data-theme', theme);
@@ -53,6 +56,9 @@
         if (label) {
           label.textContent = theme === 'dark' ? 'Dark mode' : 'Light mode';
         }
+      }
+      if (favicon && lightIcon && darkIcon) {
+        favicon.setAttribute('href', theme === 'dark' ? darkIcon : lightIcon);
       }
     };
 
