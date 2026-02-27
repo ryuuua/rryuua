@@ -45,8 +45,8 @@ Execution command template:
 ```bash
 bash /Users/ryua/code/mcp_sandbox/scripts/factory_auto.sh \
   --token <TOKEN> \
-  --repo-id rryuua \
-  --repo-name rryuua \
+  --repo-id Github_pages \
+  --repo-name Github_pages \
   --branch "$(git rev-parse --abbrev-ref HEAD)"
 ```
 
@@ -146,5 +146,5 @@ VaultのローカルRAG用ベクトルキャッシュの再構築を行うトリ
 - `mx:local`
 
 実行例:
-- `python3 /Users/ryua/code/mcp_sandbox/scripts/dispatch_repo_trigger.py --repo-root /Users/ryua/code/rryuua --token <TOKEN>`
+- `python3 /Users/ryua/code/mcp_sandbox/scripts/dispatch_repo_trigger.py --repo-root /Users/ryua/code/Github_pages --token <TOKEN>`
 <!-- AGENTIC_TRIGGER_TOKENS:END -->
