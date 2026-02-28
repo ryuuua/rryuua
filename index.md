@@ -4,10 +4,6 @@ title: Home
 ---
 
 <section class="card photo-reel" id="gallery" data-photo-reel>
-  <div class="photo-reel__head">
-    <h2>Photo Reel</h2>
-    <p>Monochrome by default. Hover on desktop, or scroll into view on mobile, to restore original color.</p>
-  </div>
   <div class="photo-stage">
     {% assign gallery_files = site.static_files | where_exp: "file", "file.path contains '/Photos-3-001/'" | sort: "path" %}
     {% assign photo_count = 0 %}
