@@ -63,16 +63,16 @@ title: Home
   </div>
   <div class="photo-stage">
     <figure class="photo-frame is-active" data-photo-frame>
-      <img src="{{ '/material/light.jpg' | relative_url }}" alt="Portrait photo in daylight">
-      <figcaption>Portrait / Daylight</figcaption>
+      <img src="{{ '/Photos-3-001/IMG_1541.jpeg' | relative_url }}" alt="Photo reel image 1">
+      <figcaption>Photo / 01</figcaption>
     </figure>
     <figure class="photo-frame" data-photo-frame>
-      <img src="{{ '/material/dark.jpg' | relative_url }}" alt="Portrait photo in low light">
-      <figcaption>Portrait / Low Light</figcaption>
+      <img src="{{ '/Photos-3-001/IMG_1592.jpeg' | relative_url }}" alt="Photo reel image 2">
+      <figcaption>Photo / 02</figcaption>
     </figure>
     <figure class="photo-frame" data-photo-frame>
-      <img src="{{ '/material/light.jpg' | relative_url }}" alt="Portrait photo close-up">
-      <figcaption>Portrait / Close-up</figcaption>
+      <img src="{{ '/Photos-3-001/IMG_1644.jpeg' | relative_url }}" alt="Photo reel image 3">
+      <figcaption>Photo / 03</figcaption>
     </figure>
   </div>
   <div class="photo-dots" aria-label="Photo reel controls">
