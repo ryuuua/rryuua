@@ -106,10 +106,10 @@ title: Home
 </section>
 
 <section class="callout" id="contact">
-  <h2>Robust Representaiton learning</h2>
+  <h2>Robust Representation Learning</h2>
   <p>
     I am open to research collaborations, visiting positions, and opportunities to present this work to diverse audiences.
     Reach out if you are exploring similar directions or want to co-design new experiments.
   </p>
-  <a class="btn primary" href="abe.ryunosuke.at2@naist.ac.jp">Contact Me</a>
+  <a class="btn primary" href="mailto:abe.ryunosuke.at2@naist.ac.jp">Contact Me</a>
 </section>

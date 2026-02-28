@@ -44,6 +44,7 @@
   --tag-2-border: rgba(0, 0, 0, 0.18);
   --tag-3-bg: rgba(128, 128, 128, 0.18);
   --tag-3-border: rgba(0, 0, 0, 0.24);
+  --btn-primary-text: #f3f3f3;
   --radius-lg: 26px;
   --radius-md: 18px;
   --radius-sm: 12px;
@@ -96,6 +97,7 @@ html[data-theme="dark"] {
   --tag-2-border: rgba(255, 255, 255, 0.2);
   --tag-3-bg: rgba(255, 255, 255, 0.19);
   --tag-3-border: rgba(255, 255, 255, 0.32);
+  --btn-primary-text: #0f0f0f;
   color-scheme: dark;
 }
 
@@ -234,6 +236,7 @@ a:focus {
 .btn.primary {
   background: linear-gradient(120deg, var(--accent), var(--accent-strong));
   border-color: var(--border-strong);
+  color: var(--btn-primary-text);
 }
 
 .btn.ghost {
