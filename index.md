@@ -3,6 +3,28 @@ layout: home
 title: Home
 ---
 
+<section class="card photo-reel" id="gallery" data-photo-reel>
+  <div class="photo-reel__head">
+    <h2>Photo Reel</h2>
+    <p>Monochrome by default. Hover on desktop, or scroll into view on mobile, to restore original color.</p>
+  </div>
+  <div class="photo-stage">
+    {% assign gallery_files = site.static_files | where_exp: "file", "file.path contains '/Photos-3-001/'" | sort: "path" %}
+    {% assign photo_count = 0 %}
+    {% for file in gallery_files %}
+      {% assign ext = file.extname | downcase %}
+      {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.webp' or ext == '.avif' %}
+        {% assign photo_count = photo_count | plus: 1 %}
+        <figure class="photo-frame{% if photo_count == 1 %} is-active{% endif %}" data-photo-frame>
+          <img src="{{ file.path | relative_url }}" alt="Photo reel image {{ photo_count }}">
+          <figcaption>Photo / {% if photo_count < 10 %}0{% endif %}{{ photo_count }}</figcaption>
+        </figure>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="photo-dots" data-photo-dots aria-label="Photo reel controls"></div>
+</section>
+
 <section class="hero" id="top">
   <div class="hero-content">
     <h1>Ryunosuke Abe</h1>
@@ -54,28 +76,6 @@ title: Home
       </div>
     </article>
   </div>
-</section>
-
-<section class="card photo-reel" id="gallery" data-photo-reel>
-  <div class="photo-reel__head">
-    <h2>Photo Reel</h2>
-    <p>Monochrome by default. Hover on desktop, or scroll into view on mobile, to restore original color.</p>
-  </div>
-  <div class="photo-stage">
-    {% assign gallery_files = site.static_files | where_exp: "file", "file.path contains '/Photos-3-001/'" | sort: "path" %}
-    {% assign photo_count = 0 %}
-    {% for file in gallery_files %}
-      {% assign ext = file.extname | downcase %}
-      {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.webp' or ext == '.avif' %}
-        {% assign photo_count = photo_count | plus: 1 %}
-        <figure class="photo-frame{% if photo_count == 1 %} is-active{% endif %}" data-photo-frame>
-          <img src="{{ file.path | relative_url }}" alt="Photo reel image {{ photo_count }}">
-          <figcaption>Photo / {% if photo_count < 10 %}0{% endif %}{{ photo_count }}</figcaption>
-        </figure>
-      {% endif %}
-    {% endfor %}
-  </div>
-  <div class="photo-dots" data-photo-dots aria-label="Photo reel controls"></div>
 </section>
 
 <section class="card" id="highlights">

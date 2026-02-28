@@ -614,6 +614,10 @@ a:focus {
   gap: 1.3rem;
 }
 
+.photo-reel:first-of-type {
+  margin-top: 0;
+}
+
 .photo-reel__head {
   display: flex;
   align-items: flex-end;
