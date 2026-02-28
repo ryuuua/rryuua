@@ -56,6 +56,32 @@ title: Home
   </div>
 </section>
 
+<section class="card photo-reel" id="gallery" data-photo-reel>
+  <div class="photo-reel__head">
+    <h2>Photo Reel</h2>
+    <p>Monochrome by default. Hover on desktop, or scroll into view on mobile, to restore original color.</p>
+  </div>
+  <div class="photo-stage">
+    <figure class="photo-frame is-active" data-photo-frame>
+      <img src="{{ '/material/light.jpg' | relative_url }}" alt="Portrait photo in daylight">
+      <figcaption>Portrait / Daylight</figcaption>
+    </figure>
+    <figure class="photo-frame" data-photo-frame>
+      <img src="{{ '/material/dark.jpg' | relative_url }}" alt="Portrait photo in low light">
+      <figcaption>Portrait / Low Light</figcaption>
+    </figure>
+    <figure class="photo-frame" data-photo-frame>
+      <img src="{{ '/material/light.jpg' | relative_url }}" alt="Portrait photo close-up">
+      <figcaption>Portrait / Close-up</figcaption>
+    </figure>
+  </div>
+  <div class="photo-dots" aria-label="Photo reel controls">
+    <button class="photo-dot is-active" type="button" data-photo-dot aria-label="Show first photo" aria-current="true"></button>
+    <button class="photo-dot" type="button" data-photo-dot aria-label="Show second photo" aria-current="false"></button>
+    <button class="photo-dot" type="button" data-photo-dot aria-label="Show third photo" aria-current="false"></button>
+  </div>
+</section>
+
 <section class="card" id="highlights">
   <h2>Recent Highlights</h2>
   <div class="timeline">

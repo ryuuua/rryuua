@@ -1,43 +1,49 @@
 ---
 # Front matter to ensure Jekyll processes this file
 ---
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap');
 
 :root {
-  --bg: #fae7cb;
-  --bg-alt: #f3d3aa;
-  --fg: #2b1b12;
-  --fg-soft: rgba(43, 27, 18, 0.82);
-  --muted: rgba(43, 27, 18, 0.7);
-  --muted-faint: rgba(43, 27, 18, 0.55);
-  --accent: #7c5cff;
-  --accent-strong: #5e3de1;
-  --accent-soft: rgba(124, 92, 255, 0.16);
-  --accent-2: #06d6a0;
-  --accent-shadow: rgba(124, 92, 255, 0.18);
-  --accent-shadow-strong: rgba(124, 92, 255, 0.28);
-  --accent-ring: rgba(124, 92, 255, 0.12);
-  --card: rgba(255, 250, 244, 0.78);
-  --card-border: rgba(120, 86, 54, 0.2);
-  --shadow: 0 24px 50px rgba(95, 64, 36, 0.18);
-  --surface: rgba(255, 255, 255, 0.55);
-  --surface-strong: rgba(255, 255, 255, 0.78);
-  --border-subtle: rgba(120, 86, 54, 0.16);
-  --border-strong: rgba(120, 86, 54, 0.28);
-  --header-bg: rgba(250, 231, 203, 0.92);
-  --header-border: rgba(120, 86, 54, 0.18);
-  --nav-bg: rgba(250, 231, 203, 0.98);
-  --badge-bg: rgba(255, 255, 255, 0.6);
-  --badge-border: rgba(120, 86, 54, 0.28);
-  --badge-text: rgba(43, 27, 18, 0.72);
-  --bg-glow-1: rgba(124, 92, 255, 0.12);
-  --bg-glow-2: rgba(6, 214, 160, 0.12);
-  --hero-glow-1: rgba(124, 92, 255, 0.16);
-  --hero-glow-2: rgba(6, 214, 160, 0.12);
-  --hero-sheen: rgba(255, 255, 255, 0.32);
-  --hero-conic: rgba(124, 92, 255, 0.18);
-  --card-glow: rgba(124, 92, 255, 0.1);
-  --highlight-border: rgba(124, 92, 255, 0.35);
+  --bg: #ececec;
+  --bg-alt: #d8d8d8;
+  --fg: #101010;
+  --fg-soft: rgba(16, 16, 16, 0.84);
+  --muted: rgba(16, 16, 16, 0.7);
+  --muted-faint: rgba(16, 16, 16, 0.52);
+  --accent: #111111;
+  --accent-strong: #000000;
+  --accent-soft: rgba(17, 17, 17, 0.12);
+  --accent-2: #757575;
+  --accent-shadow: rgba(0, 0, 0, 0.14);
+  --accent-shadow-strong: rgba(0, 0, 0, 0.24);
+  --accent-ring: rgba(17, 17, 17, 0.13);
+  --card: rgba(253, 253, 253, 0.8);
+  --card-border: rgba(17, 17, 17, 0.15);
+  --shadow: 0 24px 48px rgba(0, 0, 0, 0.13);
+  --surface: rgba(255, 255, 255, 0.62);
+  --surface-strong: rgba(255, 255, 255, 0.88);
+  --border-subtle: rgba(17, 17, 17, 0.14);
+  --border-strong: rgba(17, 17, 17, 0.27);
+  --header-bg: rgba(236, 236, 236, 0.92);
+  --header-border: rgba(17, 17, 17, 0.16);
+  --nav-bg: rgba(236, 236, 236, 0.96);
+  --badge-bg: rgba(255, 255, 255, 0.74);
+  --badge-border: rgba(17, 17, 17, 0.22);
+  --badge-text: rgba(16, 16, 16, 0.72);
+  --bg-glow-1: rgba(255, 255, 255, 0.28);
+  --bg-glow-2: rgba(0, 0, 0, 0.08);
+  --hero-glow-1: rgba(255, 255, 255, 0.45);
+  --hero-glow-2: rgba(0, 0, 0, 0.08);
+  --hero-sheen: rgba(255, 255, 255, 0.42);
+  --hero-conic: rgba(0, 0, 0, 0.13);
+  --card-glow: rgba(255, 255, 255, 0.46);
+  --highlight-border: rgba(0, 0, 0, 0.42);
+  --tag-1-bg: rgba(255, 255, 255, 0.68);
+  --tag-1-border: rgba(0, 0, 0, 0.28);
+  --tag-2-bg: rgba(0, 0, 0, 0.07);
+  --tag-2-border: rgba(0, 0, 0, 0.18);
+  --tag-3-bg: rgba(128, 128, 128, 0.18);
+  --tag-3-border: rgba(0, 0, 0, 0.24);
   --radius-lg: 26px;
   --radius-md: 18px;
   --radius-sm: 12px;
@@ -50,45 +56,51 @@ html {
 }
 
 html[data-theme="dark"] {
-  --bg: #060606;
-  --bg-alt: #0d0d0f;
-  --fg: #f5f7ff;
-  --fg-soft: rgba(245, 247, 255, 0.85);
-  --muted: #adb6ce;
-  --muted-faint: rgba(245, 247, 255, 0.58);
-  --accent: #7c5cff;
-  --accent-strong: #5e3de1;
-  --accent-soft: rgba(124, 92, 255, 0.16);
-  --accent-2: #06d6a0;
-  --accent-shadow: rgba(124, 92, 255, 0.16);
-  --accent-shadow-strong: rgba(124, 92, 255, 0.26);
-  --accent-ring: rgba(124, 92, 255, 0.1);
-  --card: rgba(13, 13, 15, 0.7);
-  --card-border: rgba(255, 255, 255, 0.08);
-  --shadow: 0 30px 60px rgba(7, 10, 35, 0.35);
-  --surface: rgba(255, 255, 255, 0.08);
-  --surface-strong: rgba(255, 255, 255, 0.1);
-  --border-subtle: rgba(255, 255, 255, 0.12);
-  --border-strong: rgba(255, 255, 255, 0.18);
-  --header-bg: rgba(6, 6, 6, 0.82);
-  --header-border: rgba(255, 255, 255, 0.08);
-  --nav-bg: rgba(6, 6, 6, 0.92);
-  --badge-bg: rgba(255, 255, 255, 0.06);
-  --badge-border: rgba(255, 255, 255, 0.14);
-  --badge-text: rgba(245, 247, 255, 0.65);
-  --bg-glow-1: rgba(124, 92, 255, 0.15);
-  --bg-glow-2: rgba(6, 214, 160, 0.15);
-  --hero-glow-1: rgba(124, 92, 255, 0.18);
-  --hero-glow-2: rgba(6, 214, 160, 0.12);
-  --hero-sheen: rgba(255, 255, 255, 0.033);
-  --hero-conic: rgba(124, 92, 255, 0.25);
-  --card-glow: rgba(124, 92, 255, 0.12);
-  --highlight-border: rgba(124, 92, 255, 0.35);
+  --bg: #090909;
+  --bg-alt: #131313;
+  --fg: #f3f3f3;
+  --fg-soft: rgba(243, 243, 243, 0.86);
+  --muted: rgba(243, 243, 243, 0.72);
+  --muted-faint: rgba(243, 243, 243, 0.56);
+  --accent: #ffffff;
+  --accent-strong: #dddddd;
+  --accent-soft: rgba(255, 255, 255, 0.14);
+  --accent-2: #7d7d7d;
+  --accent-shadow: rgba(0, 0, 0, 0.35);
+  --accent-shadow-strong: rgba(0, 0, 0, 0.52);
+  --accent-ring: rgba(255, 255, 255, 0.12);
+  --card: rgba(19, 19, 19, 0.77);
+  --card-border: rgba(255, 255, 255, 0.14);
+  --shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  --surface: rgba(255, 255, 255, 0.09);
+  --surface-strong: rgba(255, 255, 255, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.3);
+  --header-bg: rgba(9, 9, 9, 0.82);
+  --header-border: rgba(255, 255, 255, 0.11);
+  --nav-bg: rgba(9, 9, 9, 0.93);
+  --badge-bg: rgba(255, 255, 255, 0.08);
+  --badge-border: rgba(255, 255, 255, 0.2);
+  --badge-text: rgba(243, 243, 243, 0.7);
+  --bg-glow-1: rgba(255, 255, 255, 0.04);
+  --bg-glow-2: rgba(255, 255, 255, 0.02);
+  --hero-glow-1: rgba(255, 255, 255, 0.08);
+  --hero-glow-2: rgba(255, 255, 255, 0.03);
+  --hero-sheen: rgba(255, 255, 255, 0.06);
+  --hero-conic: rgba(255, 255, 255, 0.08);
+  --card-glow: rgba(255, 255, 255, 0.04);
+  --highlight-border: rgba(255, 255, 255, 0.44);
+  --tag-1-bg: rgba(255, 255, 255, 0.14);
+  --tag-1-border: rgba(255, 255, 255, 0.28);
+  --tag-2-bg: rgba(255, 255, 255, 0.08);
+  --tag-2-border: rgba(255, 255, 255, 0.2);
+  --tag-3-bg: rgba(255, 255, 255, 0.19);
+  --tag-3-border: rgba(255, 255, 255, 0.32);
   color-scheme: dark;
 }
 
 body {
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
   font-size: 16px;
   font-weight: 400;
   background: radial-gradient(circle at top left, var(--bg-glow-1), transparent 45%),
@@ -122,6 +134,7 @@ section[id] {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Syne', 'Segoe UI', sans-serif;
   font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--fg);
@@ -537,9 +550,9 @@ a:focus {
   border: 1px solid var(--border-subtle);
 }
 
-.tag.blue { background: rgba(124, 92, 255, 0.2); border-color: rgba(124, 92, 255, 0.4); }
-.tag.green { background: rgba(6, 214, 160, 0.2); border-color: rgba(6, 214, 160, 0.4); }
-.tag.pink { background: rgba(255, 92, 174, 0.2); border-color: rgba(255, 92, 174, 0.4); }
+.tag.blue { background: var(--tag-1-bg); border-color: var(--tag-1-border); }
+.tag.green { background: var(--tag-2-bg); border-color: var(--tag-2-border); }
+.tag.pink { background: var(--tag-3-bg); border-color: var(--tag-3-border); }
 
 .highlight-grid {
   display: grid;
@@ -593,6 +606,129 @@ a:focus {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted-faint);
+}
+
+.photo-reel {
+  margin-top: 2.8rem;
+  display: grid;
+  gap: 1.3rem;
+}
+
+.photo-reel__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.photo-reel__head p {
+  max-width: 32rem;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.photo-stage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  min-height: 290px;
+  border-radius: calc(var(--radius-md) - 2px);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: linear-gradient(140deg, var(--hero-glow-1), var(--hero-glow-2)), var(--bg-alt);
+}
+
+.photo-frame {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 620ms ease, transform 900ms ease;
+  pointer-events: none;
+}
+
+.photo-frame.is-active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1) contrast(1.08) brightness(0.92);
+  transition: filter 360ms ease, transform 900ms ease;
+  transform: scale(1.03);
+}
+
+.photo-frame.is-active img {
+  transform: scale(1);
+}
+
+.photo-frame figcaption {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  margin: 0;
+  padding: 0.43rem 0.78rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-strong);
+  color: var(--fg);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.photo-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.52rem;
+}
+
+.photo-dot {
+  width: 0.66rem;
+  height: 0.66rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.photo-dot.is-active {
+  background: var(--fg);
+  border-color: var(--fg);
+  transform: scale(1.14);
+}
+
+.photo-dot:hover,
+.photo-dot:focus-visible {
+  border-color: var(--border-strong);
+  transform: scale(1.1);
+}
+
+.photo-dot:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .photo-frame.is-active:hover img {
+    filter: grayscale(0) contrast(1) brightness(1);
+  }
+}
+
+@media (hover: none) {
+  .photo-reel.is-in-view .photo-frame.is-active img {
+    filter: grayscale(0) contrast(1) brightness(1);
+  }
 }
 
 .callout {
@@ -688,6 +824,11 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .photo-stage {
+    aspect-ratio: 4 / 3;
+    min-height: 250px;
+  }
+
   .hero {
     grid-template-columns: minmax(0, 1fr) auto;
     text-align: left;
@@ -772,8 +913,32 @@ footer {
     border-radius: var(--radius-sm);
   }
 
+  .photo-reel__head {
+    gap: 0.9rem;
+  }
+
+  .photo-stage {
+    min-height: 215px;
+  }
+
+  .photo-frame figcaption {
+    left: 0.7rem;
+    bottom: 0.7rem;
+    font-size: 0.66rem;
+    padding: 0.37rem 0.64rem;
+    letter-spacing: 0.1em;
+  }
+
   .callout {
     padding: 2rem 1.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-frame,
+  .photo-frame img,
+  .photo-dot {
+    transition: none;
   }
 }
 
