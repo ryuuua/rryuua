@@ -76,9 +76,25 @@
         return;
       }
       const frames = Array.from(reel.querySelectorAll('[data-photo-frame]'));
-      const dots = Array.from(reel.querySelectorAll('[data-photo-dot]'));
+      const dotsRoot = reel.querySelector('[data-photo-dots]');
       if (!frames.length) {
         return;
+      }
+      if (dotsRoot) {
+        dotsRoot.innerHTML = '';
+      }
+      const dots = dotsRoot ? frames.map((frame, frameIndex) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'photo-dot';
+        dot.setAttribute('data-photo-dot', '');
+        dot.setAttribute('aria-label', 'Show photo ' + (frameIndex + 1));
+        dot.setAttribute('aria-current', 'false');
+        dotsRoot.appendChild(dot);
+        return dot;
+      }) : [];
+      if (dotsRoot && frames.length < 2) {
+        dotsRoot.hidden = true;
       }
 
       let index = 0;

@@ -62,24 +62,20 @@ title: Home
     <p>Monochrome by default. Hover on desktop, or scroll into view on mobile, to restore original color.</p>
   </div>
   <div class="photo-stage">
-    <figure class="photo-frame is-active" data-photo-frame>
-      <img src="{{ '/Photos-3-001/IMG_1541.jpeg' | relative_url }}" alt="Photo reel image 1">
-      <figcaption>Photo / 01</figcaption>
-    </figure>
-    <figure class="photo-frame" data-photo-frame>
-      <img src="{{ '/Photos-3-001/IMG_1592.jpeg' | relative_url }}" alt="Photo reel image 2">
-      <figcaption>Photo / 02</figcaption>
-    </figure>
-    <figure class="photo-frame" data-photo-frame>
-      <img src="{{ '/Photos-3-001/IMG_1644.jpeg' | relative_url }}" alt="Photo reel image 3">
-      <figcaption>Photo / 03</figcaption>
-    </figure>
+    {% assign gallery_files = site.static_files | where_exp: "file", "file.path contains '/Photos-3-001/'" | sort: "path" %}
+    {% assign photo_count = 0 %}
+    {% for file in gallery_files %}
+      {% assign ext = file.extname | downcase %}
+      {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.webp' or ext == '.avif' %}
+        {% assign photo_count = photo_count | plus: 1 %}
+        <figure class="photo-frame{% if photo_count == 1 %} is-active{% endif %}" data-photo-frame>
+          <img src="{{ file.path | relative_url }}" alt="Photo reel image {{ photo_count }}">
+          <figcaption>Photo / {% if photo_count < 10 %}0{% endif %}{{ photo_count }}</figcaption>
+        </figure>
+      {% endif %}
+    {% endfor %}
   </div>
-  <div class="photo-dots" aria-label="Photo reel controls">
-    <button class="photo-dot is-active" type="button" data-photo-dot aria-label="Show first photo" aria-current="true"></button>
-    <button class="photo-dot" type="button" data-photo-dot aria-label="Show second photo" aria-current="false"></button>
-    <button class="photo-dot" type="button" data-photo-dot aria-label="Show third photo" aria-current="false"></button>
-  </div>
+  <div class="photo-dots" data-photo-dots aria-label="Photo reel controls"></div>
 </section>
 
 <section class="card" id="highlights">
