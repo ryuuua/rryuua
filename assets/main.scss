@@ -128,7 +128,7 @@ body {
 main, .page-content {
   max-width: var(--max-width);
   margin: 0 auto 5rem;
-  padding: 1.1rem 1.75rem 0;
+  padding: 0.55rem 1.75rem 0;
 }
 
 .home > .page-heading {
@@ -764,7 +764,7 @@ footer {
 
 @media (max-width: 900px) {
   main, .page-content {
-    padding: 1.3rem 1.15rem 0;
+    padding: 0.95rem 1.15rem 0;
   }
 
   .header-inner {

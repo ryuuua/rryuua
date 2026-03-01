@@ -1,6 +1,5 @@
 ---
 layout: home
-title: Home
 ---
 
 <section class="card photo-reel" id="gallery" data-photo-reel>
