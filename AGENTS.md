@@ -45,8 +45,8 @@ Execution command template:
 ```bash
 bash /Users/ryua/code/mcp_sandbox/scripts/factory_auto.sh \
   --token <TOKEN> \
-  --repo-id Github_pages \
-  --repo-name Github_pages \
+  --repo-id rryuua \
+  --repo-name rryuua \
   --branch "$(git rev-parse --abbrev-ref HEAD)"
 ```
 
