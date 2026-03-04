@@ -151,5 +151,5 @@ VaultのローカルRAG用ベクトルキャッシュの再構築を行うトリ
 - `local`
 
 実行例:
-- `python3 /Users/ryua/code/mcp_sandbox/scripts/dispatch_repo_trigger.py --repo-root /Users/ryua/code/rryuua --token <TOKEN>`
+- `python3 /Users/ryua/code/mcp_sandbox/scripts/dispatch_repo_trigger.py --repo-root /Users/ryua/code/Github_pages --token <TOKEN>`
 <!-- AGENTIC_TRIGGER_TOKENS:END -->
