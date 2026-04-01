@@ -485,9 +485,15 @@ a:focus {
   box-shadow: var(--shadow);
 }
 
+.hero-image picture {
+  display: block;
+}
+
 .hero-image img {
   display: block;
   width: clamp(180px, 28vw, 260px);
+  max-width: 100%;
+  height: auto;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-subtle);
 }
