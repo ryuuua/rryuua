@@ -2,6 +2,10 @@
 layout: home
 ---
 
+{% assign transparent_pixel = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==' %}
+{% assign gallery_sizes = '(max-width: 600px) calc(100vw - 2.3rem), (max-width: 1080px) calc(100vw - 4rem), 1046px' %}
+{% assign hero_sizes = '(max-width: 600px) 60vw, (max-width: 900px) 38vw, 260px' %}
+
 <section class="card photo-reel" id="gallery" data-photo-reel>
   <div class="photo-stage">
     {% assign gallery_files = site.static_files | where_exp: "file", "file.path contains '/Photos-3-001/'" | sort: "path" %}
@@ -10,8 +14,44 @@ layout: home
       {% assign ext = file.extname | downcase %}
       {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.webp' or ext == '.avif' %}
         {% assign photo_count = photo_count | plus: 1 %}
+        {% assign filename = file.path | split: '/' | last %}
+        {% assign basename = filename | replace: file.extname, '' %}
+        {% capture gallery_webp_srcset %}{{ '/optimized/gallery/' | append: basename | append: '-1280.webp' | relative_url }} 1280w, {{ '/optimized/gallery/' | append: basename | append: '-1920.webp' | relative_url }} 1920w{% endcapture %}
+        {% capture gallery_jpg_srcset %}{{ '/optimized/gallery/' | append: basename | append: '-1280.jpg' | relative_url }} 1280w, {{ '/optimized/gallery/' | append: basename | append: '-1920.jpg' | relative_url }} 1920w{% endcapture %}
+        {% capture gallery_fallback %}{{ '/optimized/gallery/' | append: basename | append: '-1280.jpg' | relative_url }}{% endcapture %}
         <figure class="photo-frame{% if photo_count == 1 %} is-active{% endif %}" data-photo-frame>
-          <img src="{{ file.path | relative_url }}" alt="Photo reel image {{ photo_count }}">
+          <picture>
+            <source
+              type="image/webp"
+              sizes="{{ gallery_sizes }}"
+              {% if photo_count == 1 %}
+                srcset="{{ gallery_webp_srcset }}"
+              {% else %}
+                data-srcset="{{ gallery_webp_srcset }}"
+              {% endif %}>
+            <source
+              type="image/jpeg"
+              sizes="{{ gallery_sizes }}"
+              {% if photo_count == 1 %}
+                srcset="{{ gallery_jpg_srcset }}"
+              {% else %}
+                data-srcset="{{ gallery_jpg_srcset }}"
+              {% endif %}>
+            <img
+              src="{% if photo_count == 1 %}{{ gallery_fallback }}{% else %}{{ transparent_pixel }}{% endif %}"
+              {% if photo_count == 1 %}
+                srcset="{{ gallery_jpg_srcset }}"
+                loading="eager"
+                fetchpriority="high"
+              {% else %}
+                data-src="{{ gallery_fallback }}"
+                data-srcset="{{ gallery_jpg_srcset }}"
+                loading="lazy"
+              {% endif %}
+              sizes="{{ gallery_sizes }}"
+              decoding="async"
+              alt="Photo reel image {{ photo_count }}">
+          </picture>
           <figcaption>Photo / {% if photo_count < 10 %}0{% endif %}{{ photo_count }}</figcaption>
         </figure>
       {% endif %}
@@ -39,7 +79,48 @@ layout: home
   </div>
   <div class="hero-image">
     <figure>
-      <img src="{{ '/material/light.jpg' | relative_url }}" alt="Portrait of Ryunosuke Abe" data-theme-image data-light-src="{{ '/material/light.jpg' | relative_url }}" data-dark-src="{{ '/material/dark.jpg' | relative_url }}">
+      {% assign light_jpg_640 = '/optimized/material/light-640.jpg' | relative_url %}
+      {% assign light_jpg_1024 = '/optimized/material/light-1024.jpg' | relative_url %}
+      {% assign light_webp_640 = '/optimized/material/light-640.webp' | relative_url %}
+      {% assign light_webp_1024 = '/optimized/material/light-1024.webp' | relative_url %}
+      {% assign dark_jpg_640 = '/optimized/material/dark-640.jpg' | relative_url %}
+      {% assign dark_jpg_1024 = '/optimized/material/dark-1024.jpg' | relative_url %}
+      {% assign dark_webp_640 = '/optimized/material/dark-640.webp' | relative_url %}
+      {% assign dark_webp_1024 = '/optimized/material/dark-1024.webp' | relative_url %}
+      {% capture light_jpg_srcset %}{{ light_jpg_640 }} 640w, {{ light_jpg_1024 }} 1024w{% endcapture %}
+      {% capture light_webp_srcset %}{{ light_webp_640 }} 640w, {{ light_webp_1024 }} 1024w{% endcapture %}
+      {% capture dark_jpg_srcset %}{{ dark_jpg_640 }} 640w, {{ dark_jpg_1024 }} 1024w{% endcapture %}
+      {% capture dark_webp_srcset %}{{ dark_webp_640 }} 640w, {{ dark_webp_1024 }} 1024w{% endcapture %}
+      <picture>
+        <source
+          type="image/webp"
+          sizes="{{ hero_sizes }}"
+          data-theme-source
+          data-light-srcset="{{ light_webp_srcset }}"
+          data-dark-srcset="{{ dark_webp_srcset }}"
+          srcset="{{ light_webp_srcset }}">
+        <source
+          type="image/jpeg"
+          sizes="{{ hero_sizes }}"
+          data-theme-source
+          data-light-srcset="{{ light_jpg_srcset }}"
+          data-dark-srcset="{{ dark_jpg_srcset }}"
+          srcset="{{ light_jpg_srcset }}">
+        <img
+          src="{{ light_jpg_640 }}"
+          srcset="{{ light_jpg_srcset }}"
+          sizes="{{ hero_sizes }}"
+          width="1024"
+          height="683"
+          loading="eager"
+          decoding="async"
+          alt="Portrait of Ryunosuke Abe"
+          data-theme-image
+          data-light-src="{{ light_jpg_640 }}"
+          data-dark-src="{{ dark_jpg_640 }}"
+          data-light-srcset="{{ light_jpg_srcset }}"
+          data-dark-srcset="{{ dark_jpg_srcset }}">
+      </picture>
     </figure>
   </div>
 </section>

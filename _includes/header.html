@@ -64,8 +64,23 @@
       document.querySelectorAll('[data-theme-image]').forEach((image) => {
         const lightSrc = image.getAttribute('data-light-src');
         const darkSrc = image.getAttribute('data-dark-src');
+        const lightSrcset = image.getAttribute('data-light-srcset');
+        const darkSrcset = image.getAttribute('data-dark-srcset');
+        const picture = image.parentElement;
+        if (picture) {
+          picture.querySelectorAll('[data-theme-source]').forEach((source) => {
+            const sourceLightSrcset = source.getAttribute('data-light-srcset');
+            const sourceDarkSrcset = source.getAttribute('data-dark-srcset');
+            if (sourceLightSrcset && sourceDarkSrcset) {
+              source.setAttribute('srcset', theme === 'dark' ? sourceDarkSrcset : sourceLightSrcset);
+            }
+          });
+        }
         if (lightSrc && darkSrc) {
           image.setAttribute('src', theme === 'dark' ? darkSrc : lightSrc);
+        }
+        if (lightSrcset && darkSrcset) {
+          image.setAttribute('srcset', theme === 'dark' ? darkSrcset : lightSrcset);
         }
       });
     };
@@ -97,8 +112,48 @@
         dotsRoot.hidden = true;
       }
 
+      const hydrateFrame = (frame) => {
+        if (!frame || frame.getAttribute('data-photo-loaded') === 'true') {
+          return;
+        }
+        frame.querySelectorAll('source[data-srcset]').forEach((source) => {
+          const srcset = source.getAttribute('data-srcset');
+          if (srcset) {
+            source.setAttribute('srcset', srcset);
+            source.removeAttribute('data-srcset');
+          }
+        });
+        const image = frame.querySelector('img');
+        if (image) {
+          const src = image.getAttribute('data-src');
+          const srcset = image.getAttribute('data-srcset');
+          if (srcset) {
+            image.setAttribute('srcset', srcset);
+            image.removeAttribute('data-srcset');
+          }
+          if (src) {
+            image.setAttribute('src', src);
+            image.removeAttribute('data-src');
+          }
+        }
+        frame.setAttribute('data-photo-loaded', 'true');
+      };
+
+      const queueHydration = (frame) => {
+        if (!frame || frame.getAttribute('data-photo-loaded') === 'true') {
+          return;
+        }
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(() => hydrateFrame(frame), { timeout: 1200 });
+        } else {
+          window.setTimeout(() => hydrateFrame(frame), 180);
+        }
+      };
+
       let index = 0;
       const setActive = (nextIndex) => {
+        hydrateFrame(frames[nextIndex]);
+        queueHydration(frames[(nextIndex + 1) % frames.length]);
         frames.forEach((frame, frameIndex) => {
           const isActive = frameIndex === nextIndex;
           frame.classList.toggle('is-active', isActive);

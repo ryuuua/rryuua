@@ -2,9 +2,11 @@
 
 ## Fast Path (Public Targets)
 
-公開 target は次の3つに固定:
-- `env1_a6000`
-- `env2_3090`
+公開 target は次の5つに固定:
+- `env1`
+- `env2`
+- `env3`
+- `env4`
 - `cc21`
 
 設計原則:
@@ -12,16 +14,16 @@
 - Python 側は Pydantic 型付きローダー兼検証器に徹する。
 - `cc21` は `logical access endpoint + capability + queue_profile` で扱う。
 - `headnode` は `targets.yaml.infrastructure_hosts` で管理する bastion であり、公開 target ではない。
-- 公開 target は上記3つのみを使い、旧 split-target 運用はしない。
+- 公開 target は上記5つのみを使い、旧 split-target 運用はしない。
 
 ## Workflow Matrix (Usage)
 
-| Mode | Token | `env1_a6000` | `env2_3090` | `cc21` |
-| --- | --- | --- | --- | --- |
-| no token | なし | 参照/解決/説明のみ | 参照/解決/説明のみ | 参照/解決/説明のみ |
-| ref | `ref:<target>` | 参照/解決/説明のみ | 参照/解決/説明のみ | 参照/解決/説明のみ |
-| test | `test:<target>` | 承認済み probe/test（Docker 経路） | 承認済み probe/test（Docker 経路） | 承認済み probe/test（`plan_dispatch` + Slurm） |
-| exe | `exe:<target>` | ユーザー実行（Docker 強制） | ユーザー実行（Docker 強制） | ユーザー実行（`plan_dispatch` + Slurm 強制） |
+| Mode | Token | `env1` | `env2` | `env3` | `env4` | `cc21` |
+| --- | --- | --- | --- | --- | --- | --- |
+| no token | なし | 参照/解決/説明のみ | 参照/解決/説明のみ | 参照/解決/説明のみ | 参照/解決/説明のみ | 参照/解決/説明のみ |
+| ref | `ref:<target>` | 参照/解決/説明のみ | 参照/解決/説明のみ | 参照/解決/説明のみ | 参照/解決/説明のみ | 参照/解決/説明のみ |
+| test | `test:<target>` | 承認済み probe/test（Docker 経路） | 承認済み probe/test（Docker 経路） | 承認済み probe/test（Docker 経路） | 承認済み probe/test（Docker 経路） | 承認済み probe/test（`plan_dispatch` + Slurm） |
+| exe | `exe:<target>` | ユーザー実行（Docker 強制） | ユーザー実行（Docker 強制） | ユーザー実行（Docker 強制） | ユーザー実行（Docker 強制） | ユーザー実行（`plan_dispatch` + Slurm 強制） |
 
 ## Runtime Context Gate
 
@@ -36,14 +38,18 @@
 
 | Target | Backend | Required Flow | Path Scope |
 | --- | --- | --- | --- |
-| `env1_a6000` | Docker | `docker_run*` を優先（ユーザー実行は Docker 強制） | `/home` |
-| `env2_3090` | Docker | `docker_run*` を優先（ユーザー実行は Docker 強制） | `/home` |
+| `env1` | Docker | `docker_run*` を優先（ユーザー実行は Docker 強制） | `/home` |
+| `env2` | Docker | `docker_run*` を優先（ユーザー実行は Docker 強制） | `/home` |
+| `env3` | Docker | `docker_run*` を優先（ユーザー実行は Docker 強制） | `/home` |
+| `env4` | Docker | `docker_run*` を優先（ユーザー実行は Docker 強制） | `/home` |
 | `cc21` | Slurm | `plan_dispatch` -> `resolve_and_submit_sbatch*` / `submit_sbatch*` | `/work` |
 
 CC21 planner ポリシー:
 - `plan_dispatch` の `rationale` は実行前に必ず提示する。
 - 通常経路は planner 強制。`queue_profile_override` は expert path 限定。
 - live 状態（`sinfo` / `squeue`）は短 TTL runtime cache で扱い、repo tracked YAML に混在させない。
+- 公開 `cc21` capability は `cpu` / `hmem` / `gpu` に限定する。
+- `gpu` は `short` / `long` を公開順とし、H200 対応 partition が利用可能なら優先する。
 
 ## labenv_config Public Tokens
 
@@ -52,7 +58,7 @@ CC21 planner ポリシー:
 - `test:<target>`
 - `exe:<target>`
 
-`<target>` は `env1_a6000` / `env2_3090` / `cc21` を使う。
+`<target>` は `env1` / `env2` / `env3` / `env4` / `cc21` を使う。
 
 組み合わせルール:
 - 同一 target で `ref + test` は許可。
