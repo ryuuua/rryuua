@@ -1,56 +1,74 @@
-<div class="simplicial-field" aria-hidden="true">
-  <svg class="simplicial-field__shape simplicial-field__shape--north" viewBox="0 0 100 100" focusable="false">
-    <g class="simplicial-field__edges">
-      <line x1="17" y1="35" x2="51" y2="15"></line>
-      <line x1="51" y1="15" x2="84" y2="43"></line>
-      <line x1="84" y1="43" x2="63" y2="82"></line>
-      <line x1="63" y1="82" x2="17" y2="35"></line>
-      <line x1="17" y1="35" x2="84" y2="43"></line>
-      <line x1="51" y1="15" x2="63" y2="82"></line>
+<div class="simplicial-field" aria-hidden="true" inert>
+  <svg class="simplicial-field__shape simplicial-field__shape--simplex" viewBox="0 0 160 160" focusable="false" aria-hidden="true">
+    <defs>
+      <pattern id="simplicial-hatch-simplex" class="simplicial-field__hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+        <path class="simplicial-field__hatch-mark" d="M-2 3.5H9"></path>
+      </pattern>
+    </defs>
+
+    <g class="simplicial-field__facets">
+      <path class="simplicial-field__facet simplicial-field__facet--hatched" style="--facet-delay: 1.05s; --facet-opacity: 0.34" d="M80 17L34 97L127 94Z"></path>
+      <path class="simplicial-field__facet" style="--facet-delay: 1.78s; --facet-opacity: 0.42" d="M80 17L34 97L77 136Z"></path>
+      <path class="simplicial-field__facet" style="--facet-delay: 2.33s; --facet-opacity: 0.48" d="M80 17L77 136L127 94Z"></path>
+      <path class="simplicial-field__facet simplicial-field__facet--near" style="--facet-delay: 2.88s; --facet-opacity: 0.58" d="M34 97L127 94L77 136Z"></path>
     </g>
+
+    <g class="simplicial-field__edges">
+      <path class="simplicial-field__edge simplicial-field__edge--back" pathLength="100" style="--pencil-delay: 0.12s" d="M80 17Q56 56 34 97"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--back" pathLength="100" style="--pencil-delay: 0.53s" d="M80 17Q106 50 127 94"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--back" pathLength="100" style="--pencil-delay: 0.94s" d="M34 97Q81 88 127 94"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--front" pathLength="100" style="--pencil-delay: 1.35s" d="M80 17Q79 74 77 136"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--front" pathLength="100" style="--pencil-delay: 1.76s" d="M34 97Q57 119 77 136"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--front" pathLength="100" style="--pencil-delay: 2.17s" d="M127 94Q102 118 77 136"></path>
+
+      <path class="simplicial-field__edge simplicial-field__edge--echo" pathLength="100" style="--pencil-delay: 1.48s" d="M81 18Q77 75 78 135"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--echo" pathLength="100" style="--pencil-delay: 2.29s" d="M126 95Q101 117 78 137"></path>
+    </g>
+
     <g class="simplicial-field__nodes">
-      <circle cx="17" cy="35" r="2.8"></circle>
-      <circle cx="51" cy="15" r="2.8"></circle>
-      <circle cx="84" cy="43" r="2.8"></circle>
-      <circle cx="63" cy="82" r="2.8"></circle>
+      <circle class="simplicial-field__node" style="--node-delay: 0.72s" cx="80" cy="17" r="3.1"></circle>
+      <circle class="simplicial-field__node" style="--node-delay: 1.1s" cx="34" cy="97" r="3.1"></circle>
+      <circle class="simplicial-field__node" style="--node-delay: 1.51s" cx="127" cy="94" r="3.1"></circle>
+      <circle class="simplicial-field__node" style="--node-delay: 2.66s" cx="77" cy="136" r="3.2"></circle>
     </g>
   </svg>
 
-  <svg class="simplicial-field__shape simplicial-field__shape--south" viewBox="0 0 100 100" focusable="false">
-    <g class="simplicial-field__edges">
-      <line x1="18" y1="26" x2="52" y2="14"></line>
-      <line x1="52" y1="14" x2="84" y2="40"></line>
-      <line x1="84" y1="40" x2="74" y2="78"></line>
-      <line x1="74" y1="78" x2="27" y2="74"></line>
-      <line x1="27" y1="74" x2="18" y2="26"></line>
-      <line x1="18" y1="26" x2="74" y2="78"></line>
-      <line x1="52" y1="14" x2="27" y2="74"></line>
-    </g>
-    <g class="simplicial-field__nodes">
-      <circle cx="18" cy="26" r="2.65"></circle>
-      <circle cx="52" cy="14" r="2.65"></circle>
-      <circle cx="84" cy="40" r="2.65"></circle>
-      <circle cx="74" cy="78" r="2.65"></circle>
-      <circle cx="27" cy="74" r="2.65"></circle>
-    </g>
-  </svg>
+  <svg class="simplicial-field__shape simplicial-field__shape--complex" viewBox="0 0 160 160" focusable="false" aria-hidden="true">
+    <defs>
+      <pattern id="simplicial-hatch-complex" class="simplicial-field__hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+        <path class="simplicial-field__hatch-mark" d="M-2 3.5H9"></path>
+      </pattern>
+    </defs>
 
-  <svg class="simplicial-field__shape simplicial-field__shape--middle" viewBox="0 0 100 100" focusable="false">
-    <g class="simplicial-field__edges">
-      <line x1="17" y1="49" x2="43" y2="20"></line>
-      <line x1="43" y1="20" x2="77" y2="30"></line>
-      <line x1="77" y1="30" x2="84" y2="66"></line>
-      <line x1="84" y1="66" x2="49" y2="82"></line>
-      <line x1="49" y1="82" x2="17" y2="49"></line>
-      <line x1="17" y1="49" x2="77" y2="30"></line>
-      <line x1="43" y1="20" x2="49" y2="82"></line>
+    <g class="simplicial-field__facets">
+      <path class="simplicial-field__facet simplicial-field__facet--hatched" style="--facet-delay: 1.46s; --facet-opacity: 0.29" d="M81 23L130 55L95 135Z"></path>
+      <path class="simplicial-field__facet" style="--facet-delay: 2.64s; --facet-opacity: 0.42" d="M30 90L81 23L95 135Z"></path>
+      <path class="simplicial-field__facet" style="--facet-delay: 3.05s; --facet-opacity: 0.35" d="M30 90L95 135L130 55Z"></path>
+      <path class="simplicial-field__facet" style="--facet-delay: 3.87s; --facet-opacity: 0.36" d="M132 119L81 23L95 135Z"></path>
+      <path class="simplicial-field__facet simplicial-field__facet--near" style="--facet-delay: 4.28s; --facet-opacity: 0.54" d="M132 119L95 135L130 55Z"></path>
     </g>
+
+    <g class="simplicial-field__edges">
+      <path class="simplicial-field__edge simplicial-field__edge--back" pathLength="100" style="--pencil-delay: 0.46s" d="M81 23Q106 37 130 55"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--back" pathLength="100" style="--pencil-delay: 0.87s" d="M130 55Q114 95 95 135"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--back" pathLength="100" style="--pencil-delay: 1.28s" d="M95 135Q84 80 81 23"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--front" pathLength="100" style="--pencil-delay: 1.69s" d="M30 90Q55 55 81 23"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--back" pathLength="100" style="--pencil-delay: 2.1s" d="M30 90Q83 67 130 55"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--front" pathLength="100" style="--pencil-delay: 2.51s" d="M30 90Q64 116 95 135"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--back" pathLength="100" style="--pencil-delay: 2.92s" d="M132 119Q108 67 81 23"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--front" pathLength="100" style="--pencil-delay: 3.33s" d="M132 119Q136 86 130 55"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--front" pathLength="100" style="--pencil-delay: 3.74s" d="M132 119Q113 130 95 135"></path>
+
+      <path class="simplicial-field__edge simplicial-field__edge--echo" pathLength="100" style="--pencil-delay: 2.63s" d="M31 89Q65 115 96 134"></path>
+      <path class="simplicial-field__edge simplicial-field__edge--echo" pathLength="100" style="--pencil-delay: 3.86s" d="M131 118Q112 129 96 136"></path>
+    </g>
+
     <g class="simplicial-field__nodes">
-      <circle cx="17" cy="49" r="2.5"></circle>
-      <circle cx="43" cy="20" r="2.5"></circle>
-      <circle cx="77" cy="30" r="2.5"></circle>
-      <circle cx="84" cy="66" r="2.5"></circle>
-      <circle cx="49" cy="82" r="2.5"></circle>
+      <circle class="simplicial-field__node" style="--node-delay: 1.06s" cx="81" cy="23" r="3.1"></circle>
+      <circle class="simplicial-field__node" style="--node-delay: 1.45s" cx="130" cy="55" r="3.1"></circle>
+      <circle class="simplicial-field__node" style="--node-delay: 1.87s" cx="95" cy="135" r="3.2"></circle>
+      <circle class="simplicial-field__node" style="--node-delay: 2.98s" cx="30" cy="90" r="3.15"></circle>
+      <circle class="simplicial-field__node" style="--node-delay: 4.2s" cx="132" cy="119" r="3.15"></circle>
     </g>
   </svg>
 </div>
