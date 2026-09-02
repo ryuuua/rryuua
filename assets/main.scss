@@ -132,7 +132,7 @@ body {
 
 .simplicial-field {
   display: none;
-  --simplicial-size: min(20rem, calc(50vw - 32.5rem));
+  --simplicial-size: calc(150vw - 97.5rem);
   position: fixed;
   inset: 0;
   z-index: 0;
@@ -140,10 +140,48 @@ body {
   pointer-events: none;
 }
 
-.simplicial-field__shape {
+.simplicial-field__window {
   position: absolute;
-  display: block;
+  top: 0;
+  bottom: 0;
+  width: calc(50% - 36rem);
+  overflow: hidden;
+}
+
+.simplicial-field__window--simplex {
+  left: 0;
+}
+
+.simplicial-field__window--complex {
+  right: 0;
+}
+
+.simplicial-field__frame {
+  position: absolute;
   width: var(--simplicial-size);
+}
+
+.simplicial-field__frame--simplex {
+  top: 11%;
+  left: 0;
+  transform: translateX(-20%);
+}
+
+.simplicial-field__frame--complex {
+  right: 0;
+  bottom: 8%;
+  transform: translateX(20%);
+}
+
+@media (min-width: 1680px) {
+  .simplicial-field {
+    --simplicial-size: 60rem;
+  }
+}
+
+.simplicial-field__shape {
+  display: block;
+  width: 100%;
   height: auto;
   overflow: visible;
   opacity: 0.9;
@@ -202,16 +240,6 @@ body {
   fill: var(--simplicial-node-fill);
   stroke: var(--simplicial-node-stroke);
   stroke-width: 1.55;
-}
-
-.simplicial-field__shape--simplex {
-  top: 11%;
-  left: max(-1.3rem, calc(50% - 36rem - var(--simplicial-size)));
-}
-
-.simplicial-field__shape--complex {
-  right: max(-1.3rem, calc(50% - 36rem - var(--simplicial-size)));
-  bottom: 8%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
