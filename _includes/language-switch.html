@@ -1,0 +1,12 @@
+<nav class="language-switch" aria-label="{{ ui.language_switch | escape }}">
+  {%- for language in site.data.i18n -%}
+    {%- assign code = language[0] -%}
+    {%- assign labels = language[1] -%}
+    {%- assign counterpart = translations | where: 'lang', code | first -%}
+    {%- if code == current_lang -%}
+      <span lang="{{ code }}" aria-current="true">{{ labels.label }}</span>
+    {%- else -%}
+      <a lang="{{ code }}" hreflang="{{ code }}" href="{{ counterpart.url | default: labels.home | relative_url }}">{{ labels.label }}{% unless counterpart %}<span class="language-switch__fallback"> · {{ labels.home_fallback }}</span>{% endunless %}</a>
+    {%- endif -%}
+  {%- endfor -%}
+</nav>

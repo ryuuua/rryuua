@@ -1,0 +1,7 @@
+{
+  "captured_at": "2026-10-23T00:24:42.053337+09:00",
+  "repository": "ryuuua/rryuua",
+  "branch": "main",
+  "head": "aed1d432969f0da042d3d6277458012d83188cfa",
+  "worktree_status": " M _config.yml\n M _includes/head.html\n M _includes/header.html\n M _layouts/default.html\n M _layouts/home.html\n M about.md\n M assets/main.scss\n M blog.md\n M cv.md\n M index.md\n M infra-photos.md\n M mathcluster.md\n M projects.md\n M projects/cebra-nlp.md\n M publications.md\n?? README.md\n?? _data/i18n.yml\n?? _includes/footer.html\n?? _includes/home-gallery.html\n?? _includes/home-portrait.html\n?? _includes/language-context.html\n?? _includes/language-switch.html\n?? _ops/publication-pause/2026-10-23/pages-before.json\n?? _ops/publication-pause/2026-10-23/runs-before.json\n?? _ops/publication-pause/2026-10-23/workflows-before.json\n?? en/about.md\n?? en/blog.md\n?? en/cv.md\n?? en/index.md\n?? en/infra-photos.md\n?? en/mathcluster.md\n?? en/projects.md\n?? en/projects/cebra-nlp.md\n?? en/publications.md\n"
+}

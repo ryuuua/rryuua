@@ -1,0 +1,105 @@
+{
+  "checks": [
+    {
+      "url": "http://127.0.0.1:4177/rryuua/",
+      "title": "ホーム | Ryunosuke Abe",
+      "lang": "ja"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/about/",
+      "title": "自己紹介 | Ryunosuke Abe",
+      "lang": "ja"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/projects/",
+      "title": "プロジェクト | Ryunosuke Abe",
+      "lang": "ja"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/publications/",
+      "title": "論文 | Ryunosuke Abe",
+      "lang": "ja"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/cv/",
+      "title": "経歴 | Ryunosuke Abe",
+      "lang": "ja"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/blog/",
+      "title": "ブログ | Ryunosuke Abe",
+      "lang": "ja"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/mathcluster/",
+      "title": "計算環境 | Ryunosuke Abe",
+      "lang": "ja"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/infra-photos/",
+      "title": "計算環境の写真 | Ryunosuke Abe",
+      "lang": "ja"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/projects/cebra-nlp/",
+      "title": "CEBRA NLP | Ryunosuke Abe",
+      "lang": "ja"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/en/",
+      "title": "Home | Ryunosuke Abe",
+      "lang": "en"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/en/about/",
+      "title": "About | Ryunosuke Abe",
+      "lang": "en"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/en/projects/",
+      "title": "Projects | Ryunosuke Abe",
+      "lang": "en"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/en/publications/",
+      "title": "Publications | Ryunosuke Abe",
+      "lang": "en"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/en/cv/",
+      "title": "CV | Ryunosuke Abe",
+      "lang": "en"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/en/blog/",
+      "title": "Blog | Ryunosuke Abe",
+      "lang": "en"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/en/mathcluster/",
+      "title": "Mathcluster | Ryunosuke Abe",
+      "lang": "en"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/en/infra-photos/",
+      "title": "Infrastructure Photos | Ryunosuke Abe",
+      "lang": "en"
+    },
+    {
+      "url": "http://127.0.0.1:4177/rryuua/en/projects/cebra-nlp/",
+      "title": "CEBRA NLP | Ryunosuke Abe",
+      "lang": "en"
+    }
+  ],
+  "errors": [],
+  "httpErrors": [],
+  "viewports": [
+    1440,
+    1024,
+    900,
+    390,
+    320
+  ],
+  "noJS": "pass",
+  "flow": "JA home -> EN home -> EN projects -> EN project details -> JA project details; mobile menu, history, reload, theme persistence"
+}

@@ -1,7 +1,9 @@
 ---
 layout: page
-title: Blog
+title: ブログ
 permalink: /blog/
+lang: ja
+translation_key: blog
 ---
 
-*Under preparation*.
+*準備中です。*

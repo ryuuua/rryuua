@@ -2,6 +2,8 @@
 layout: page
 title: CEBRA NLP
 permalink: /projects/cebra-nlp/
+lang: ja
+translation_key: cebra-nlp
 ---
 
 ## 概要

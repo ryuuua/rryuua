@@ -3,7 +3,25 @@ description: "Mathematical Information Lab@ NAIST"
 url: "https://ryuuua.github.io"
 baseurl: "/rryuua"
 theme: minima
-lang: ja-JP
+lang: ja
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: ja
+      description: "奈良先端科学技術大学院大学 数理情報学研究室"
+  - scope:
+      path: "en"
+    values:
+      lang: en
+      description: "Mathematical Information Lab @ NAIST"
+exclude:
+  - AGENTS.md
+  - README.md
+  - scripts
+  - vendor
+  - Gemfile
+  - Gemfile.lock
 author:
 email: abe.ryunosuke.at2@naist.ac.jp
 minima:

@@ -1,0 +1,12 @@
+{
+  "id": 193267302,
+  "node_id": "W_kwDOP4TWpM4LhQZm",
+  "name": "Deploy Jekyll with GitHub Pages dependencies preinstalled",
+  "path": ".github/workflows/jekyll-gh-pages.yml",
+  "state": "disabled_manually",
+  "created_at": "2025-09-28T18:23:45.000+09:00",
+  "updated_at": "2026-10-23T00:25:05.000+09:00",
+  "url": "https://api.github.com/repos/ryuuua/rryuua/actions/workflows/193267302",
+  "html_url": "https://github.com/ryuuua/rryuua/blob/main/.github/workflows/jekyll-gh-pages.yml",
+  "badge_url": "https://github.com/ryuuua/rryuua/workflows/Deploy%20Jekyll%20with%20GitHub%20Pages%20dependencies%20preinstalled/badge.svg"
+}

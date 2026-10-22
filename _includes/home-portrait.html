@@ -1,0 +1,47 @@
+{% assign hero_sizes = '(max-width: 600px) 60vw, (max-width: 900px) 38vw, 260px' %}
+  <div class="hero-image">
+    <figure>
+      {% assign light_jpg_640 = '/optimized/material/light-640.jpg' | relative_url %}
+      {% assign light_jpg_1024 = '/optimized/material/light-1024.jpg' | relative_url %}
+      {% assign light_webp_640 = '/optimized/material/light-640.webp' | relative_url %}
+      {% assign light_webp_1024 = '/optimized/material/light-1024.webp' | relative_url %}
+      {% assign dark_jpg_640 = '/optimized/material/dark-640.jpg' | relative_url %}
+      {% assign dark_jpg_1024 = '/optimized/material/dark-1024.jpg' | relative_url %}
+      {% assign dark_webp_640 = '/optimized/material/dark-640.webp' | relative_url %}
+      {% assign dark_webp_1024 = '/optimized/material/dark-1024.webp' | relative_url %}
+      {% capture light_jpg_srcset %}{{ light_jpg_640 }} 640w, {{ light_jpg_1024 }} 1024w{% endcapture %}
+      {% capture light_webp_srcset %}{{ light_webp_640 }} 640w, {{ light_webp_1024 }} 1024w{% endcapture %}
+      {% capture dark_jpg_srcset %}{{ dark_jpg_640 }} 640w, {{ dark_jpg_1024 }} 1024w{% endcapture %}
+      {% capture dark_webp_srcset %}{{ dark_webp_640 }} 640w, {{ dark_webp_1024 }} 1024w{% endcapture %}
+      <picture>
+        <source
+          type="image/webp"
+          sizes="{{ hero_sizes }}"
+          data-theme-source
+          data-light-srcset="{{ light_webp_srcset }}"
+          data-dark-srcset="{{ dark_webp_srcset }}"
+          srcset="{{ light_webp_srcset }}">
+        <source
+          type="image/jpeg"
+          sizes="{{ hero_sizes }}"
+          data-theme-source
+          data-light-srcset="{{ light_jpg_srcset }}"
+          data-dark-srcset="{{ dark_jpg_srcset }}"
+          srcset="{{ light_jpg_srcset }}">
+        <img
+          src="{{ light_jpg_640 }}"
+          srcset="{{ light_jpg_srcset }}"
+          sizes="{{ hero_sizes }}"
+          width="6000"
+          height="4000"
+          loading="eager"
+          decoding="async"
+          alt="{{ include.alt | escape }}"
+          data-theme-image
+          data-light-src="{{ light_jpg_640 }}"
+          data-dark-src="{{ dark_jpg_640 }}"
+          data-light-srcset="{{ light_jpg_srcset }}"
+          data-dark-srcset="{{ dark_jpg_srcset }}">
+      </picture>
+    </figure>
+  </div>

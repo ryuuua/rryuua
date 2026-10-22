@@ -477,8 +477,54 @@ a:focus {
   margin: 0 auto;
   padding: 1.1rem 1.75rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1rem;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+
+.language-switch > a,
+.language-switch > span {
+  padding: 0.45rem 0.7rem;
+  border-radius: calc(var(--radius-sm) - 4px);
+  color: var(--fg-soft);
+}
+
+.language-switch [aria-current] {
+  color: var(--btn-primary-text);
+  background: var(--accent);
+  font-weight: 700;
+}
+
+.language-switch a:hover {
+  background: var(--surface-strong);
+}
+
+.language-switch a:focus-visible,
+.nav-toggle:focus-visible + .nav-toggle-label {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.language-switch__fallback {
+  font-size: 0.7rem;
 }
 
 .site-title {
@@ -603,17 +649,21 @@ a:focus {
 
 .site-nav {
   margin-left: auto;
+  flex-basis: 100%;
+  min-width: 0;
 }
 
 .nav-groups {
   display: flex;
   align-items: center;
   gap: 1.75rem;
+  flex-wrap: wrap;
 }
 
 .nav-group {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1.1rem;
   margin: 0;
@@ -624,6 +674,7 @@ a:focus {
   display: flex;
   align-items: center;
   gap: 0.9rem;
+  flex-wrap: wrap;
 }
 
 .nav-label {
@@ -634,7 +685,7 @@ a:focus {
 }
 
 .nav-divider {
-  display: block;
+  display: none;
   width: 1px;
   height: 1.6rem;
   background: var(--border-strong);
@@ -1074,6 +1125,13 @@ footer {
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem 1.4rem;
+  }
+
+  .header-controls {
+    order: 2;
+    width: 100%;
+    margin-left: 0;
+    justify-content: space-between;
   }
 
   .nav-toggle-label {

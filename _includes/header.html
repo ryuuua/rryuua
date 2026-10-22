@@ -1,40 +1,40 @@
 <header class="site-header" role="banner">
   <div class="header-inner">
-    <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
+    <a class="site-title" rel="author" href="{{ ui.home | relative_url }}">
       {{ site.title | escape }}
     </a>
 
-    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
-      <span class="theme-toggle__icon" aria-hidden="true"></span>
-      <span class="theme-toggle__text" data-theme-label>Light mode</span>
-    </button>
+    <div class="header-controls">
+      {% include language-switch.html %}
+      <button class="theme-toggle" type="button" data-theme-toggle data-light-label="{{ ui.theme_light | escape }}" data-dark-label="{{ ui.theme_dark | escape }}" aria-pressed="false">
+        <span class="theme-toggle__icon" aria-hidden="true"></span>
+        <span class="theme-toggle__text" data-theme-label>{{ ui.theme_light }}</span>
+      </button>
+    </div>
 
-    <input type="checkbox" id="site-nav-toggle" class="nav-toggle">
+    <input type="checkbox" id="site-nav-toggle" class="nav-toggle" aria-controls="site-nav-menu">
     <label for="site-nav-toggle" class="nav-toggle-label">
-      <span class="sr-only">Toggle navigation</span>
+      <span class="sr-only">{{ ui.toggle_navigation }}</span>
       <span class="hamburger" aria-hidden="true"></span>
     </label>
 
-    <nav class="site-nav" id="site-nav-menu" aria-label="Main navigation">
+    <nav class="site-nav" id="site-nav-menu" aria-label="{{ ui.main_navigation | escape }}">
       <div class="nav-groups">
         <ul class="nav-group nav-group--global">
-          <li><a class="nav-link" href="{{ '/mathcluster/' | relative_url }}">Mathcluster</a></li>
-          <li><a class="nav-link" href="{{ '/infra-photos/' | relative_url }}">Photos</a></li>
-          <li><a class="nav-link" href="{{ '/projects/' | relative_url }}">Projects</a></li>
-          <li><a class="nav-link" href="{{ '/publications/' | relative_url }}">Publications</a></li>
-          <li><a class="nav-link" href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          <li><a class="nav-link" href="{{ '/cv/' | relative_url }}">CV</a></li>
+          {% for item in ui.navigation %}
+            {% assign destination = localized_pages | where: 'translation_key', item.key | first %}
+            {% if destination %}
+              <li><a class="nav-link" href="{{ destination.url | relative_url }}"{% if destination.url == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+            {% endif %}
+          {% endfor %}
         </ul>
         <span class="nav-divider" aria-hidden="true"></span>
         <div class="nav-stack">
-          <span class="nav-label">On this page</span>
+          <span class="nav-label">{% if page.translation_key == 'index' %}{{ ui.on_this_page }}{% else %}{{ ui.on_home }}{% endif %}</span>
           <ul class="nav-group nav-group--local">
-            <li><a class="nav-link" data-local="true" href="{{ '/' | relative_url }}#gallery">Gallery</a></li>
-            <li><a class="nav-link" data-local="true" href="{{ '/' | relative_url }}#about">About</a></li>
-            <li><a class="nav-link" data-local="true" href="{{ '/' | relative_url }}#research">Research</a></li>
-            <li><a class="nav-link" data-local="true" href="{{ '/' | relative_url }}#highlights">Highlights</a></li>
-            <li><a class="nav-link" data-local="true" href="{{ '/' | relative_url }}#education">Education</a></li>
-            <li><a class="nav-link" data-local="true" href="{{ '/' | relative_url }}#contact">Contact</a></li>
+            {% for section in ui.sections %}
+              <li><a class="nav-link" href="{{ ui.home | relative_url }}#{{ section.id }}">{{ section.label }}</a></li>
+            {% endfor %}
           </ul>
         </div>
       </div>
@@ -53,7 +53,7 @@
       if (toggle) {
         toggle.setAttribute('aria-pressed', theme === 'dark');
         if (label) {
-          label.textContent = theme === 'dark' ? 'Dark mode' : 'Light mode';
+          label.textContent = theme === 'dark' ? toggle.dataset.darkLabel : toggle.dataset.lightLabel;
         }
       }
       document.querySelectorAll('[data-favicon]').forEach((icon) => {
@@ -105,7 +105,7 @@
         dot.type = 'button';
         dot.className = 'photo-dot';
         dot.setAttribute('data-photo-dot', '');
-        dot.setAttribute('aria-label', 'Show photo ' + (frameIndex + 1));
+        dot.setAttribute('aria-label', {{ ui.show_photo | jsonify }} + ' ' + (frameIndex + 1));
         dot.setAttribute('aria-current', 'false');
         dotsRoot.appendChild(dot);
         return dot;

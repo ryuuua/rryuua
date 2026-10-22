@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-23T00:25:26.506701+09:00",
+  "repository": "ryuuua/rryuua",
+  "pages_api_status": 404,
+  "deployment_workflow_state": "disabled_manually",
+  "active_runs_at_pause": [],
+  "checkpoint_branch": "codex/site-paused-20261023",
+  "published_site": "https://ryuuua.github.io/rryuua/",
+  "source_preserved": true,
+  "remote_source_changed": false,
+  "http_checks": [
+    {
+      "url": "https://ryuuua.github.io/rryuua/",
+      "status": 200,
+      "checked_at": "2026-10-23T00:27:18.307702+09:00"
+    },
+    {
+      "url": "https://ryuuua.github.io/rryuua/index.html",
+      "status": 404,
+      "checked_at": "2026-10-23T00:27:18.524614+09:00"
+    },
+    {
+      "url": "https://ryuuua.github.io/rryuua/projects/",
+      "status": 404,
+      "checked_at": "2026-10-23T00:27:18.569750+09:00"
+    }
+  ],
+  "cdn_cache_pending": true,
+  "note": "Pages設定は解除済み。トップURLに以前のCDNキャッシュが残る場合があります。停止前レスポンスのcache-controlはmax-age=600。"
+}

@@ -1,0 +1,8 @@
+{%- assign current_lang = page.lang | default: site.lang | slice: 0, 2 -%}
+{%- assign ui = site.data.i18n[current_lang] | default: site.data.i18n.ja -%}
+{%- assign localized_pages = site.pages | where: 'lang', current_lang -%}
+{%- assign translations = '' | split: ',' -%}
+{%- if page.translation_key -%}
+  {%- assign all_content = site.pages | concat: site.posts -%}
+  {%- assign translations = all_content | where: 'translation_key', page.translation_key -%}
+{%- endif -%}

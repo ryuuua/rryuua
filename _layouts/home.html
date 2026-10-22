@@ -5,10 +5,13 @@ layout: default
 <div class="home">
   {{ content }}
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+  {%- assign current_lang = page.lang | default: site.lang -%}
+  {%- assign ui = site.data.i18n[current_lang] -%}
+  {%- assign localized_posts = site.posts | where: 'lang', current_lang -%}
+  {%- if localized_posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: ui.posts }}</h2>
     <ul class="post-list">
-      {%- for post in site.posts -%}
+      {%- for post in localized_posts -%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -24,6 +27,6 @@ layout: default
       {%- endfor -%}
     </ul>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    <p class="rss-subscribe"><a href="{{ '/feed.xml' | relative_url }}">{{ ui.rss }}</a></p>
   {%- endif -%}
 </div>

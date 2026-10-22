@@ -1,8 +1,10 @@
 ---
 layout: page
-title: CV
+title: 経歴
 permalink: /cv/
+lang: ja
+translation_key: cv
 ---
 
-*Under preparation*.
+*準備中です。*
 

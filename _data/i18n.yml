@@ -1,0 +1,60 @@
+ja:
+  label: 日本語
+  home: /
+  description: 奈良先端科学技術大学院大学 数理情報学研究室
+  language_switch: 表示言語
+  home_fallback: ホームへ
+  main_navigation: メインナビゲーション
+  toggle_navigation: メニューを開閉
+  theme_light: ライトモード
+  theme_dark: ダークモード
+  show_photo: 写真を表示
+  content: 本文
+  posts: 記事
+  rss: RSSで購読
+  on_this_page: このページ
+  on_home: ホームの各項目
+  navigation:
+    - { key: mathcluster, label: 計算環境 }
+    - { key: infra-photos, label: 写真 }
+    - { key: projects, label: プロジェクト }
+    - { key: publications, label: 論文 }
+    - { key: blog, label: ブログ }
+    - { key: cv, label: 経歴 }
+  sections:
+    - { id: gallery, label: ギャラリー }
+    - { id: about, label: 自己紹介 }
+    - { id: research, label: 研究 }
+    - { id: highlights, label: 近況 }
+    - { id: education, label: 学歴 }
+    - { id: contact, label: 連絡先 }
+en:
+  label: English
+  home: /en/
+  description: Mathematical Information Lab @ NAIST
+  language_switch: Language
+  home_fallback: home
+  main_navigation: Main navigation
+  toggle_navigation: Toggle navigation
+  theme_light: Light mode
+  theme_dark: Dark mode
+  show_photo: Show photo
+  content: Content
+  posts: Posts
+  rss: Subscribe via RSS
+  on_this_page: On this page
+  on_home: On the home page
+  navigation:
+    - { key: mathcluster, label: Mathcluster }
+    - { key: infra-photos, label: Photos }
+    - { key: projects, label: Projects }
+    - { key: publications, label: Publications }
+    - { key: blog, label: Blog }
+    - { key: cv, label: CV }
+  sections:
+    - { id: gallery, label: Gallery }
+    - { id: about, label: About }
+    - { id: research, label: Research }
+    - { id: highlights, label: Highlights }
+    - { id: education, label: Education }
+    - { id: contact, label: Contact }
