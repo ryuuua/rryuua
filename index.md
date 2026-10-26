@@ -12,10 +12,6 @@ show_posts: false
     <h1>Ryunosuke Abe</h1>
     <p class="subtitle">奈良先端科学技術大学院大学 修士課程・数理情報学研究室</p>
     <p class="subtitle"><a href="mailto:abe.ryunosuke.at2@naist.ac.jp">abe.ryunosuke.at2@naist.ac.jp</a></p>
-    <div class="meta" style="margin-top:1.4rem;">
-      <a class="btn ghost" href="https://github.com/ryuuua/CEBRA_NLP-pub">研究コード</a>
-      <a class="btn ghost" href="https://ryuuua.github.io/CEBRA_NLP_plot/index.html?category=daircos-all-minilm-l6-v2-plot">可視化</a>
-    </div>
   </div>
   {% include home-portrait.html alt="Ryunosuke Abe のポートレート" %}
 </section>
