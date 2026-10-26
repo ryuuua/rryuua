@@ -9,7 +9,7 @@ Jekyllで生成する個人サイトです。日本語と英語の本文は別�
 | ページ | 日本語 | 英語 |
 | --- | --- | --- |
 | ホーム | `index.md` | `en/index.md` |
-| 自己紹介 | `about.md` | `en/about.md` |
+| 自己紹介ページ | — | `en/about.md` |
 | プロジェクト | `projects.md` | `en/projects.md` |
 | CEBRA NLP | `projects/cebra-nlp.md` | `en/projects/cebra-nlp.md` |
 | 論文 | `publications.md` | `en/publications.md` |
@@ -18,7 +18,7 @@ Jekyllで生成する個人サイトです。日本語と英語の本文は別�
 | 計算環境 | `mathcluster.md` | `en/mathcluster.md` |
 | 写真 | `infra-photos.md` | `en/infra-photos.md` |
 
-たとえば日本語ホームの自己紹介だけを変更する場合は、`index.md` の `<section ... id="about">` 内の文章を編集します。英語版には影響しません。`about.md` は独立した自己紹介ページで、ホーム内の自己紹介とは別です。
+日本語ホームの内容は `index.md` の4項目（名前・所属、学歴・経歴、主な研究関心、論文・発表）で編集します。英語ホームは `en/index.md` を編集します。日本語版には自己紹介ページを設けていません。
 
 既存のURLは日本語版、`/en/` 以下は英語版です。`baseurl: /rryuua` の場合、ホームは `/rryuua/` と `/rryuua/en/` になります。ヘッダーの言語切替で対応するページへ移動し、メニューやホームへのリンクも選択中の言語を維持します。JavaScriptを無効にしても言語切替を利用できます。
 

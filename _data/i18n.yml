@@ -14,20 +14,12 @@ ja:
   rss: RSSで購読
   on_this_page: このページ
   on_home: ホームの各項目
-  navigation:
-    - { key: mathcluster, label: 計算環境 }
-    - { key: infra-photos, label: 写真 }
-    - { key: projects, label: プロジェクト }
-    - { key: publications, label: 論文 }
-    - { key: blog, label: ブログ }
-    - { key: cv, label: 経歴 }
+  navigation: []
   sections:
-    - { id: gallery, label: ギャラリー }
-    - { id: about, label: 自己紹介 }
-    - { id: research, label: 研究 }
-    - { id: highlights, label: 近況 }
-    - { id: education, label: 学歴 }
-    - { id: contact, label: 連絡先 }
+    - { id: profile, label: 名前・所属 }
+    - { id: education, label: 学歴・経歴 }
+    - { id: research, label: 研究関心 }
+    - { id: publications, label: 論文・発表 }
 en:
   label: English
   home: /en/

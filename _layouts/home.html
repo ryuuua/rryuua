@@ -8,7 +8,7 @@ layout: default
   {%- assign current_lang = page.lang | default: site.lang -%}
   {%- assign ui = site.data.i18n[current_lang] -%}
   {%- assign localized_posts = site.posts | where: 'lang', current_lang -%}
-  {%- if localized_posts.size > 0 -%}
+  {%- if page.show_posts != false and localized_posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: ui.posts }}</h2>
     <ul class="post-list">
       {%- for post in localized_posts -%}

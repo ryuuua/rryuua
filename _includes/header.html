@@ -20,6 +20,7 @@
 
     <nav class="site-nav" id="site-nav-menu" aria-label="{{ ui.main_navigation | escape }}">
       <div class="nav-groups">
+        {% if ui.navigation.size > 0 %}
         <ul class="nav-group nav-group--global">
           {% for item in ui.navigation %}
             {% assign destination = localized_pages | where: 'translation_key', item.key | first %}
@@ -28,6 +29,7 @@
             {% endif %}
           {% endfor %}
         </ul>
+        {% endif %}
         <span class="nav-divider" aria-hidden="true"></span>
         <div class="nav-stack">
           <span class="nav-label">{% if page.translation_key == 'index' %}{{ ui.on_this_page }}{% else %}{{ ui.on_home }}{% endif %}</span>
