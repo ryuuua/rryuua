@@ -4,6 +4,7 @@ title: 計算環境の写真
 permalink: /infra-photos/
 lang: ja
 translation_key: infra-photos
+published: false
 ---
 
 <div class="page-stack">

@@ -3,6 +3,7 @@ layout: page
 title: Infrastructure Photos
 lang: en
 translation_key: infra-photos
+published: false
 permalink: /en/infra-photos/
 ---
 

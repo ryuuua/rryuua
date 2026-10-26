@@ -22,6 +22,11 @@ exclude:
   - vendor
   - Gemfile
   - Gemfile.lock
+  # Keep compute-system pages out of every public site build.
+  - mathcluster.md
+  - en/mathcluster.md
+  - infra-photos.md
+  - en/infra-photos.md
 author:
 email: abe.ryunosuke.at2@naist.ac.jp
 minima:
