@@ -40,22 +40,22 @@ show_posts: false
 </section>
 
 <section class="card" id="research">
-  <h2>主な研究関心</h2>
+  <h2>主な関心</h2>
   <div class="highlight-grid">
     <div class="highlight">
-      <h3>神経科学に着想を得た表現学習</h3>
-      <p>CEBRAを用い、線形変換の範囲で一貫した表現を学習することを目指しています。</p>
+      <h3>言語モデルの内部表現の幾何</h3>
+      <p>言語モデルが獲得していると思われる知識構造について、内部表現の中の幾何的な構造として現れていてほしいなと思っています。</p>
     </div>
     <div class="highlight">
-      <h3>非線形空間における知識構造</h3>
-      <p>言語で表現され、異なるモダリティの間でも共有される「知識」の構造を探っています。</p>
+      <h3>計算サーバーの管理</h3>
+      <p>サーバーを管理していたら、サーバーを管理していて、サーバーを管理していました。計算サーバーです。</p>
     </div>
   </div>
 </section>
 
 <section class="card" id="publications">
   <h2>論文・発表</h2>
-  <h3>プレプリント</h3>
+  <h3>プ, プレプリント</h3>
   <ul>
     <li>2025年 — <a href="https://openreview.net/forum?id=HgRkUfQSa4">Towards the Identification of Latent Structures in Language Embeddings</a></li>
   </ul>
