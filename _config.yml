@@ -30,4 +30,4 @@ show_excerpts: true
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-google_analytics:  # UA-XXXXX-Y or G-XXXX
+cloudflare_web_analytics_token: "3b690b23c891404287af4b6a8ec5c674"

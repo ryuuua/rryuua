@@ -1,6 +1,6 @@
 # Ryunosuke Abe — personal website
 
-**公開停止中（2026-10-23）。** 日英対応の作業はローカルブランチ `codex/site-paused-20261023` に保存しています。編集の再開と再公開の手順は [`_ops/publication-pause/README.md`](_ops/publication-pause/README.md) を参照してください。
+公開の停止・再開手順は [`_ops/publication-pause/README.md`](_ops/publication-pause/README.md) に記録しています。
 
 Jekyllで生成する個人サイトです。日本語と英語の本文は別々のMarkdownファイルで管理し、自動翻訳や同期は行いません。文章、段落、項目、掲載情報を言語ごとに自由に編集できます。
 
@@ -50,6 +50,14 @@ permalink: /new-page/
 - `_config.yml`: URL、サイト名、各言語の既定の検索用説明文。ページごとの `description` で上書きできます。
 
 既存の `preview.html` と `cebra-nlp-standalone.html` は単独HTMLの参考ページです。公開サイトの言語別コンテンツは上表のMarkdownで編集してください。
+
+## 閲覧数の記録
+
+このサイトのJekyllページでは、Cloudflare Web Analyticsでページ別の閲覧数を確認できます。GitHub Pagesの配信先やDNSを変更する必要はありません。[Cloudflareの設定手順](https://developers.cloudflare.com/web-analytics/get-started/)に従い、Web Analyticsにホスト名 `ryuuua.github.io` を追加してください。
+
+Cloudflareの「Manage site」に表示されるスニペットの `data-cf-beacon` の `token` を `_config.yml` の `cloudflare_web_analytics_token` に設定済みです。本番用にビルドして再公開すると、CloudflareのWeb Analytics画面で「Page views」を確認できます。ブラウザーで計測スクリプトがブロックされる場合があるため、閲覧数は概数です。通常のローカルプレビュー（development）では計測しません。計測開始前の閲覧数は遡って取得できません。
+
+公開設定の変更履歴は [`_ops/publication-pause/README.md`](_ops/publication-pause/README.md) を参照してください。
 
 ## ローカル確認
 
