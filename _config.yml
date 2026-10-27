@@ -3,7 +3,7 @@ description: "Mathematical Information Lab@ NAIST"
 url: "https://ryuuua.github.io"
 baseurl: "/rryuua"
 theme: minima
-lang: ja
+lang: en
 defaults:
   - scope:
       path: ""

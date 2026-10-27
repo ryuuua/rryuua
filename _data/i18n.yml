@@ -1,6 +1,6 @@
 ja:
   label: 日本語
-  home: /
+  home: /ja/
   description: 奈良先端科学技術大学院大学 数理情報学研究室
   language_switch: 表示言語
   home_fallback: ホームへ
@@ -22,7 +22,7 @@ ja:
     - { id: publications, label: 論文・発表 }
 en:
   label: English
-  home: /en/
+  home: /
   description: Mathematical Information Lab @ NAIST
   language_switch: Language
   home_fallback: home

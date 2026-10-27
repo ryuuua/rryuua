@@ -3,7 +3,7 @@ layout: home
 title: Home
 lang: en
 translation_key: index
-permalink: /en/
+permalink: /
 ---
 
 {% include home-gallery.html image_label="Photo reel image" caption="Photo" controls_label="Photo reel controls" %}

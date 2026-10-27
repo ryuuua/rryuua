@@ -5,7 +5,7 @@
   {%- seo -%}
   {%- for translation in translations -%}
     <link rel="alternate" hreflang="{{ translation.lang }}" href="{{ translation.url | absolute_url }}">
-    {%- if translation.lang == 'ja' -%}
+    {%- if translation.lang == 'en' -%}
       <link rel="alternate" hreflang="x-default" href="{{ translation.url | absolute_url }}">
     {%- endif -%}
   {%- endfor -%}

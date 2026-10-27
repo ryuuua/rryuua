@@ -3,7 +3,7 @@ layout: home
 title: ホーム
 lang: ja
 translation_key: index
-permalink: /
+permalink: /ja/
 show_posts: false
 ---
 
